@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+/*SECOND INPUT*/
+body {
+	background-color: #525252;
+}
+
+input {
+	margin-top: 3px;
+}
+
+body, h1, h2, h3, h4, p {
+	margin:0;
+	padding: 0;
+}
+
+header {
+	background-color: #FEc704;
+	margin: 0;
+	padding:0;
+	font-family: 'Pacifico', cursive; 
+	font-size: 20px;
+	text-align: center;
+}
+
+main {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	display: flex;
+}
+
+#container {
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#imagebox {
+	width:50%;
+	height: 680px;
+	text-align: center;
+}
+
+#questionbox {
+	width:50%;
+	background-color: #DDD;
+	position: relative;
+}
+
+.eachQuestion {
+	padding-top: 3%;
+}
+
+#questions {
+	margin-left: 3%;
+	margin-top: 4%;
+}
+
+#submitButton {
+	margin-left: 6%;
+	margin-top: 8%;
+}
+
+#shownPicture{
+	width: 80%;
+}
+
+#rejectButton {
+	margin-top: 2.5%;
+	margin-left: 5%;
+}
+
+#numberTask {
+	position: absolute;
+	right: 4%;
+	top:2.5%;
+}
