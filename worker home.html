@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="homepage.css">
+<head>
+<title>Worker Home Page</title>
+<meta charset="utf-8">
+<!-- <style>
+body {background-color: powderblue;}
+h1 {color: blue;}
+</style> -->
+</head>
+<script>
+var AQ = "500";
+var AM = "5"
+</script>
+<body>
+<div>
+	<ul>
+		<a href="requester home.html">Requester Home</a>&nbsp;&nbsp;
+		<a href="worker home.html">Worker Home</a>&nbsp;&nbsp;
+		<a href="index.html">Logout</a>&nbsp;&nbsp;
+	</ul>
+</div>
+<header>
+<h1>Home Page</h1>
+</header>
+<hr>
+<div>
+<form action="/work_page.html">
+<h2>
+Number of questions requested in this round:
+<input type="number" id="request">
+<input type="submit" value="Confirm">
+<a href="workplace.html">Logout</a>
+</h2>
+</form>
+</div>
+<br>
+<br>
+<div>
+<h3>
+Accumulated number of question answered: 
+<script>document.write(AQ)</script>
+</h3>
+<h3>
+Accumulated amount of money earned:
+<script>document.write(AM)</script>
+</h3>
+<br>
+<a href="history.html">
+<h4>View answered history</h4>
+</a>
+</body>
+</html>
