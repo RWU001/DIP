@@ -1,0 +1,7 @@
+https://stackoverflow.com/questions/18333427/how-to-insert-row-in-html-table-body-in-javascript
+
+https://www.w3schools.com/jsref/met_table_insertrow.asp
+
+https://www.w3schools.com/html/html_form_attributes.asp
+
+https://www.w3schools.com/php/default.asp
