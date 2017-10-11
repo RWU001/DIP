@@ -1,7 +1,7 @@
 <?php
 //Start the Session
 session_start();
-require('connect.php');
+require('php/connect.php');
 //3. If the form is submitted or not.
 //3.1 If the form is submitted
 if (isset($_POST['username']) and isset($_POST['password'])){
@@ -27,29 +27,21 @@ echo "Hai " . $username . "
 ";
 echo "This is the Members Area
 ";
-echo "<a href='logout.php'>Logout</a>";
+echo "<a href='php/logout.php'>Logout</a>";
 }
 //3.2 When the user visits the page first time, simple login form will be displayed.
 ?>
- 
- <!DOCTYPE html>
- 
- 
- <html>
- <head>
-		<title>DIP Homepage</title>
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="../../homepage.css" >
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DIP Homepage</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../css/homepage.css">
 </head>
-
 <body style="background-color:#525252;color:#008080;">
-
 <header>
-	<h1>CrowdSourcing DIP (EE3080)<span class="error">* <?php echo $usernameErr;?></span></h1>
+	<h1>CrowdSourcing DIP (EE3080)</h1>
 </header>
 <nav>
 	<b><a href="index.html">Home</a> &nbsp; 
@@ -57,46 +49,42 @@ echo "<a href='logout.php'>Logout</a>";
 	<a href="worker home.html">Worker Home</a>
 	Services &nbsp; 
 	Contact </b>
-
+	<title>
+	</title>
+	
 <script language="JavaScript" type="text/javascript">
-	function login(showhide){
-		if(showhide == "show"){
-			document.getElementById('popupbox').style.visibility="visible";
-		}else if(showhide == "hide"){
-	    	document.getElementById('popupbox').style.visibility="hidden"; 
-		}
+function login(showhide){
+	if(showhide == "show"){
+		document.getElementById('popupbox').style.visibility="visible";
+	}else if(showhide == "hide"){
+    document.getElementById('popupbox').style.visibility="hidden"; 
 	}
-
-	// function redirectrequester(){
-	// 	window.open("requester home.html");
-	// } 
-
-	function alertFalseLogin() {
-		alert('Your username or password is wrong!')
-	}
-
+}
+function redirectrequester(){
+	window.open("requester home.html");
+} 
 </script>
-
+</head>
 <body>
-<div class="container">
 
-	  <?php if(isset($smsg)){ ?><div class="alert alert-success" role="alert"> <?php echo $smsg; ?> </div><?php } ?>
-      <?php if(isset($fmsg)){ ?><div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>
-	  
-      <form class="form-signin" method="POST">
-        <h2 class="form-signin-heading">Please Register</h2>
-        <div class="input-group">
-	  <span class="input-group-addon" id="basic-addon1">@</span>
-	  <input type="text" name="username" class="form-control" placeholder="Username" required>
-	</div>
- 
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-        <a class="btn btn-lg btn-primary btn-block" href="login.php">Register</a>
-      </form>
-</div>
+<?php if(isset($smsg)){ ?><div class="alert alert-success" role="alert"> <?php echo $smsg; ?> </div><?php } ?>
+<?php if(isset($fmsg)){ ?><div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>
+
+<div id="popupbox"> 
+	<form name="login" action="" method="POST">
+		<center>Username:</center><span class="error">* <?php echo $usernameErr;?></span>
+		<center><input name="username" size="14" /></center>
+		<center>Password:</center>
+		<center><input name="password" type="password" size="14" /></center>
+		<center><input value="REGISTER" name="submit" type="button" class="btn btn-primary" onclick="redirectrequester()">
+		<input type="submit" name="submit" value="login" /></center>
+	</form>
+	<br />
+	<center><a href="javascript:login('hide');">close</a></center> 
+</div> 
+
 <!-- <p><a href="javascript:login('show');"><button>Login</button></a></p> -->
+</nav>
 <hr/>
 <div id="content">
 	<h2>Sequential Task Design for Crowdsourcing</h2>
@@ -123,7 +111,5 @@ echo "<a href='logout.php'>Logout</a>";
 <footer>
 	<small><i>Copyright &copy;2017 Front End</i></small>
 </footer>
-</body>
-</html>
 </body>
 </html>
