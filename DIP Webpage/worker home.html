@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="homepage.css">
+<head>
+<title>Worker Home Page</title>
+<meta charset="utf-8">
+<!-- <style>
+body {background-color: powderblue;}
+h1 {color: blue;}
+</style> -->
+</head>
+<script>
+var AQ = "500";
+var AM = "5"
+</script>
+<body>
+<div>
+	<ul>
+		<a href="requester home.html">Requester Home</a>&nbsp;&nbsp;
+		<a href="worker home.html">Worker Home</a>&nbsp;&nbsp;
+		<a href="index.html">Logout</a>&nbsp;&nbsp;
+	</ul>
+</div>
+<header>
+<h1>Home Page</h1>
+</header>
+<hr>
+<div>
+<form action="workplace.html">
+<table>
+		<tr><td><br></td></tr>
+		<tr>
+			<td><label for="name">Number of questions requested in this round:</label></td> 
+			<td><br></td><td><br></td>
+			<td><select name="cars">
+					<option value="volvo">Volvo</option>
+					<option value="saab">Saab</option>
+					<option value="fiat">Fiat</option>
+					<option value="audi">Audi</option>
+				</select>
+			</td>
+			<td><input type="number" name="questions" required /></td>
+			<td><input type="submit" value="Confirm" ></td>
+		</tr>
+		<tr><td><br></td></tr>
+</table>			
+</form>
+</div>
+<div>
+<table>
+		<tr>
+			<td>Accumulated number of question answered: </td> 
+			<br>
+			<td><br></td>
+			<td><script>document.write(AQ)</script></td>
+		</tr>
+		<tr><td><br></td></tr>
+		<tr>
+			<td>Accumulated amount of money earned: </td> 
+			<br>
+			<td><br></td>
+			<td><script>document.write(AM)</script></td>
+		</tr>
+		<tr><td><br></td></tr>
+		<tr><td><br></td></tr>
+		<tr>
+			<td><a href="history.html"><h4>View answered history</h4></a></td>
+		</tr>
+</table>
+
+</body>
+</html>

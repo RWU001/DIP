@@ -1,0 +1,115 @@
+<!doctype html>
+
+<html>
+
+<head>
+<style type="text/css">
+
+
+
+h1 {color:#CC0066;
+    background-color:YELLOW;
+	padding:30px;
+	border-color:purple;
+	border-width:3px;
+	border-style:dashed;
+    font-family:Castellar;
+	font-weight:bold;
+	text-align:center;
+	}
+th {color:BLUE;
+    font-family:Comic Sans MS;
+	font-weight:bold;
+	font-style:italic
+	}
+td {color:#00FF00;
+    font-family:Verdana;
+	font-weight:bold;
+	font-style:
+    }	
+tr  {background-color:orange}	
+table {text-align:center;
+       	  
+    }
+	
+body {background-color:#FF3333;
+    }
+	
+
+
+</style>
+
+<title>
+Crowdsourcing
+</title>
+
+</head>
+
+
+<body>
+
+<h1>REQUESTER PROFILE PAGE</h1>
+
+<table Border="10" width="1000" cellpadding="20" table style="margin: 0px auto;">
+
+<tr>
+<th>TASK TITLE</th>
+<th>COMPLETION OF TASK</th>
+<th>PAYMENT PROCESS</th>
+<th>RESULT</th>
+</tr>
+
+<tr>
+<td>CATS</td>
+<td><input type="button" value="✓" /></td>
+<td><input type="button" value="X" /></td>
+<td><button>DOWNLOAD</button></td>
+</tr>
+
+<tr>
+<td>DOGS</td>
+<td>&#x2714;</td>
+<td>&#x2718;</td>
+<td><button>DOWNLOAD</button></td>
+</tr>
+
+<tr>
+<td>BIRDS</td>
+<td>&#x2714;</td>
+<td>&#x2718;</td>
+<td><button>DOWNLOAD</button></td>
+</tr>
+
+<a href=""><button>UPLOAD NEW TASK</button></a>
+
+
+</table>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
