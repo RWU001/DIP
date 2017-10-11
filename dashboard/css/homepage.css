@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+#popupbox{
+margin: 0; 
+margin-left: 40%; 
+margin-right: 40%;
+margin-top: 50px; 
+padding-top: 10px; 
+width: 20%; 
+height: 150px; 
+position: absolute; 
+background: #FBFBF0; 
+border: solid #000000 2px; 
+z-index: 9; 
+font-family: arial; 
+visibility: hidden; 
+}
+header {
+		background-color: #FEc704;
+		margin: 0;
+		padding: 0;
+		font-family: 'Pacifico', cursive;
+		font-size; 20px;
+		text-align: center;
+}
+
+nav {
+		background-color: #FEc704;
+		margin: 0;
+		padding: 0;
+		font-family: 'Pacifico', cursive;
+		font-size; 20px;
+		text-align: center;
+}
+
+#center{
+	text-align:center;
+}
+
+#content {
+	color: #FFFFFF;
+	text-align: center;
+}
+body,h2,h3,h4,h5,h6,lol{	font-family: "Montserrat", sans-serif;
+							color: #FFFFFF;
+}
+h1{	font-family: 'Pacifico', cursive;
+	background-color: #FEc704;
+	color:#008080;
+}
+body{	background-color:#525252;
+		vertical-align: middle;
+		margin-left: 50px;
+}
+
+a {
+	color: #ffffff;
+}
+
+#popupbox {
+	display: none;
+}
+/* table {text-align:center;
+       	  
+    } */
