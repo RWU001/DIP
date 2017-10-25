@@ -29,12 +29,14 @@ Something is wrong with the XAMPP installation :-(
 * Open a new browser tab, and open the dbinit.php by opening it from URL (example : localhost:8080/DIPWebsite/dbinit.php). This will create all the necessary tables and some fake data
 * And you can see the project by typing localhost:8080 at the URL
 
-### Things that we may work on
+
+
+# Things that we may work on
 * Generating questions based on matrix algorithm
 * Store upload form to database(images/ word documents)
 * Working for the Worker project (Only Requester part in this GitHub)
 
-### Things that we can improve
+# Things that we can improve
 * Set all the database with the correct/relevant name
 * Website design
 * Come up with a better database structure
