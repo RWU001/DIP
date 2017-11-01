@@ -33,10 +33,14 @@ Something is wrong with the XAMPP installation :-(
 
 ## Things that we may work on
 * Generating questions based on matrix algorithm
-* Store upload form to database(images/ word documents)
-* Working for the Worker project (Only Requester part in this GitHub)
+* Getting all the images from compressed file and can get list of the images names + can show the image at the html
+* Adding features of uploading word documents and create the task classes according to the word document (you may set your own text structure at the word document)
+* Set the completion of task at requester side (whether the task already complete)
+* Allow the worker to be able to choose task that he want to do it + the number of questions feature (allow worker to only work for a number of questions).
+* Table structure
 
 ## Things that we can improve
-* Set all the database with the correct/relevant name
 * Website design
-* Come up with a better database structure
+
+## Suggestion
+* Try to give a relevant name to every variable that you created or file-names for better debugging.
