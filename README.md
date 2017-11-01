@@ -26,7 +26,9 @@ Something is wrong with the XAMPP installation :-(
 * Go to your browser, and type localhost:8080/phpmyadmin at the URL
 * Create a new database by pressing New, and set database name to DIP_CROWDSOURCING
 * Open a new browser tab, and open the dbinit.php by opening it from URL (example : localhost:8080/DIPWebsite/dbinit.php). This will create all the necessary tables and some fake data
-* And you can see the project by typing localhost:8080 at the URL (example of account : )
+* And you can see the project by typing localhost:8080 at the URL
+* We have created a fake account as a requester with username: heiho and password: heiho
+* We also have created a fake account as a worker with username:iamworker and password:iamworker
 
 
 ## Things that we may work on
