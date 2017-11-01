@@ -15,7 +15,7 @@
       $password = $_POST['password'];
   
       //3.1.2 Checking the values are existing in the database or not
-      $query = "SELECT * FROM `login_requester` WHERE username='$username' and password='$password'";
+      $query = "SELECT * FROM `login_worker` WHERE username='$username' and password='$password'";
       $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
       $count = mysqli_num_rows($result);
   
@@ -48,9 +48,9 @@
         $email = "Alfred1datui@gmail.com";
         $password = $_POST['password'];
 
-        echo $query = "INSERT INTO `login_requester` (username, password) VALUES ('$username', '$password')";
+        echo $query = "INSERT INTO `login_worker` (username, password) VALUES ('$username', '$password')";
         //below is with email
-        // echo $query = "INSERT INTO `login_requester` (username, password, email) VALUES ('$username', '$password', '$email')";
+        // echo $query = "INSERT INTO `login_worker` (username, password, email) VALUES ('$username', '$password', '$email')";
         $result = mysqli_query($connection, $query);
           
         if($result){

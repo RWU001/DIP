@@ -23,8 +23,8 @@
       }
     }
 
-    function kacau(x) {
-      alert(x);
+    function alertMessage(message) {
+      alert(message);
     }
   </script>
 
@@ -53,16 +53,14 @@
 
   <div id="boxWorker" class="popupbox">
     <center>HI Worker!</center>
-    <form name="login" action="" method="post">
+    <form name="login" action="../php/login-worker.php" method="post">
       <center>Username:</center>
       <center><input name="username" size="14" /></center>
       <center>Password:</center>
       <center><input name="password" type="password" size="14" /></center>
-      <center><input type="submit" name="submit" value="login" /></center>
+      <center><input type="submit" name="login" value="login" /></center>
       <center onclick="loginWorker('hide')" class="buttonClose">x</center> 
-		</form>
-		<form name="register" action="" method="post">
-				<center><input type="submit" name="submit" value="Sign Up" /></center>
+      <center><input type="submit" name="register" value="Sign Up" /></center>
 		</form>
   </div> 
 
@@ -96,7 +94,7 @@
     session_start();
     if (isset($_SESSION['message'])) {
       $message = $_SESSION['message'];
-      echo "<script>kacau('$message');</script>";
+      echo "<script>alertMessage('$message');</script>";
     }
     session_destroy();
   ?>

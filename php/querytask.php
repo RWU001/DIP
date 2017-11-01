@@ -4,7 +4,7 @@
   $servername = "localhost";
   $username = "root";
   $password = "";
-  $dbname = "profile";
+  $dbname = "DIP_CROWDSOURCING";
   // Create connection
   $conn = mysqli_connect($servername, $username, $password, $dbname);
   // Check connection
@@ -13,7 +13,7 @@
   }
   $userName = $_SESSION['username'];
 
-  $sql = "SELECT * FROM request WHERE USER='" . $userName . "'";
+  $sql = "SELECT * FROM requester_task WHERE USER='" . $userName . "'";
   
   if (mysqli_query($conn, $sql)) {
     $request = mysqli_query($conn, $sql);

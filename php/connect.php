@@ -4,7 +4,7 @@ if (!$connection) {
     die("Database Connection Failed" . mysqli_error($connection));
 }
 
-$select_db = mysqli_select_db($connection, 'cc');
+$select_db = mysqli_select_db($connection, 'DIP_CROWDSOURCING');
 if (!$select_db){
     die("Database Selection Failed" . mysqli_error($connection));
 }
