@@ -13,7 +13,7 @@
   }
   $userName = $_SESSION['username'];
 
-  $sql = "SELECT * FROM requester_task WHERE USER='" . $userName . "'";
+  $sql = "SELECT * FROM requester_task";
   
   if (mysqli_query($conn, $sql)) {
     $request = mysqli_query($conn, $sql);
@@ -21,13 +21,13 @@
     while($row = $request->fetch_assoc()) {
       $all_query = $all_query . "<tr>";
       $all_query = $all_query . "<td><center><font color='green'>" . $row['TASKTITLE'] . "</font></center></td>";
-      $all_query = $all_query . "<td><center>" . $row['COMPLETION_OF_TASK'] . "</center></td>";
-      $all_query = $all_query . "<td><center><font color='red'>" . $row['PAYMENT_PROCESS'] . "</font></center></td>";
-      $all_query = $all_query . "<td><center><button>Download</button></center></td>";
+      $all_query = $all_query . '<td><center>Number of questions requested in this round:
+      <input type="number" id="request">
+      <input type="submit" value="Confirm"></center></td>';
       $all_query = $all_query . "</tr>";
     }
-    $_SESSION['querytask'] = $all_query;
-    header("Location: ../html/requester-home.html");
+    $_SESSION['queryTaskWorker'] = $all_query;
+    header("Location: ../html/worker-home.html");
   } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }  

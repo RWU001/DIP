@@ -13,9 +13,10 @@
       //3.1.1 Assigning posted values to variables.
       $username = $_POST['username'];
       $password = $_POST['password'];
+      $encryptPassword = md5($password);
   
       //3.1.2 Checking the values are existing in the database or not
-      $query = "SELECT * FROM `login_requester` WHERE username='$username' and password='$password'";
+      $query = "SELECT * FROM `login_requester` WHERE username='$username' and password='$encryptPassword'";
       $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
       $count = mysqli_num_rows($result);
   
@@ -47,8 +48,9 @@
         $username = $_POST['username'];
         $email = "Alfred1datui@gmail.com";
         $password = $_POST['password'];
+        $encryptPassword = md5($password);
 
-        echo $query = "INSERT INTO `login_requester` (username, password) VALUES ('$username', '$password')";
+        echo $query = "INSERT INTO `login_requester` (username, password) VALUES ('$username', '$encryptPassword')";
         //below is with email
         // echo $query = "INSERT INTO `login_requester` (username, password, email) VALUES ('$username', '$password', '$email')";
         $result = mysqli_query($connection, $query);
