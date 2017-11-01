@@ -1,4 +1,4 @@
-# DIP Crowdsourcing
+# DIP Crowdsourcing Instructions
 
 ### How to activate the XAMPP:
 1) Download and install XAMPP from [here](https://www.apachefriends.org/download.html)
