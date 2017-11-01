@@ -24,13 +24,13 @@ $query = "CREATE TABLE login_worker (
     USERNAME varchar(255) UNIQUE NOT NULL,
     -- EMAIL varchar(255) UNIQUE NOT NULL,
     PASSWORD varchar(255) NOT NULL,
-    MONEY_ACCUMULATED int NOT NULL,
+    MONEY_ACCUMULATED FLOAT NOT NULL,
     QUESTION_ANSWERED int NOT NULL,
     PRIMARY KEY(ID)   
 )";
 $result = mysqli_query($mainDb, $query);
 $passwordWorkerTest = md5("iamworker");
-$workerTable = "INSERT INTO `login_worker` (username, password, money_accumulated, question_answered) VALUES ('iamworker', '$passwordWorkerTest', 0, 0)";
+$workerTable = "INSERT INTO `login_worker` (username, password, money_accumulated, question_answered) VALUES ('iamworker', '$passwordWorkerTest', 9.5, 10)";
 // below is the code with email
 // $createAccount = "INSERT INTO `login_worker` (username, password, email) VALUES ('iamworker', 'iamworker', 'heiho@fakeemail.com')";
 mysqli_query($mainDb, $workerTable);
