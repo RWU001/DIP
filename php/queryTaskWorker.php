@@ -18,13 +18,15 @@
   if (mysqli_query($conn, $sql)) {
     $request = mysqli_query($conn, $sql);
     $all_query = "";
+    $number = 0;
     while($row = $request->fetch_assoc()) {
       $all_query = $all_query . "<tr>";
       $all_query = $all_query . "<td><center><font color='green'>" . $row['TASKTITLE'] . "</font></center></td>";
       $all_query = $all_query . '<td><center>Number of questions requested in this round:
       <input type="number" id="request">
-      <input type="submit" value="Confirm"></center></td>';
+      <input type="submit" name="' . $number . '" value="Confirm"></center></td>';
       $all_query = $all_query . "</tr>";
+      $number++;
     }
     $_SESSION['queryTaskWorker'] = $all_query;
     header("Location: ../html/worker-home.html");
