@@ -17,7 +17,7 @@ function createListClass(e) {
     a.innerHTML += 'Your number ' + numclass + ' class is : <input type="text" name="' + classes + numclass + '" placeholder="' + classes + numclass + '">';
     a.innerHTML += '\n<ul>\n';
     for (var numfeature = 1; numfeature <= featuresNumber; numfeature++) {
-      a.innerHTML += '<li>Feature ' + numfeature + ': <input type="text" name="' + feature + numfeature + '" placeholder="' + feature + numfeature + '"></li>';
+      a.innerHTML += '<li>Feature ' + numfeature + ': <input type="text" name="' + feature + numclass + numfeature + '" placeholder="' + feature + numfeature + '"></li>';
     }
     a.innerHTML += '\n</ul>\n <br><br>';
   }
