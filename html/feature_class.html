@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="../js/feature_class.js"></script>
+<title>Test to upload ZIP file</title>
+</head>
+
+<body>
+
+<form method="post" action="../php/notepad.php">
+  <label>How many classes do you want: <input type="number" name="zip_file" id="number-of-classes" /></label>
+  <br/>
+  <label>How many features each classes have: <input type="number" name="zip_file" id="number-of-features" /></label>
+  <button type="button" onclick="createListClass()">Create task </button>
+<br />
+<input type="submit" name="submit" value="Upload"/>
+<div id="demo"></div>
+</form>
+</body>
+</html>
