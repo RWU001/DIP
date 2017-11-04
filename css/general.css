@@ -23,6 +23,22 @@ header {
 		text-align: center;
 }
 
+#space {
+	height: 20px;
+}
+
+th, td {
+	padding: 2px;
+}
+
+#table-header {
+	background-color: orange;
+}
+
+td[rowspan] {
+	vertical-align: top;
+}
+
 nav {
 		background-color: #FEc704;
 		margin: 0;
@@ -43,7 +59,7 @@ nav {
 body,h2,h3,h4,h5,h6 {	font-family: "Montserrat", sans-serif;
 							color: #FFFFFF;
 }
-h1{	font-family: 'Pacifico', cursive;
+h1{
 	background-color: #FEc704;
 	color:#008080;
 }
@@ -62,6 +78,26 @@ a {
 	margin-left: 90%;
 	text-align: right;
 }
-/* table {text-align:center;
-       	  
-    } */
+
+.container {
+	display: flex;
+	padding-left: 0%;
+}
+
+.taskQuestion {
+	width: 40%;
+}
+
+#tableQuestion {
+	width: 80%;
+}
+
+#detailClass {
+	table-layout: fixed;
+	width: 55%;
+}
+
+.inputTask {
+	float: right;
+	margin-right: 50px;
+}

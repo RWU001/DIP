@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<title>Upload Page</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../css/general.css">
+<script src="../js/upload-new-task.js"></script>
+<html>
+<body>
+
+<div>
+  <ul>
+    <a href="requester home.html">Requester Home</a>&nbsp;&nbsp;
+    <a href="worker home.html">Worker Home</a>&nbsp;&nbsp;
+    <a href="homepage.html">Logout</a>&nbsp;&nbsp;
+  </ul>
+</div>
+
+<h1>REQUESTER UPLOAD</h1>
+<br>
+<form method="post" action="../php/notepad.php">
+  <div class="container">
+    <div class="taskQuestion">
+      <label for="taskName">Task Name: <input type="text" class="inputTask" name="taskName"></label>
+      <br><br>
+      <label for="experience">Budget: <div class="inputTask">$<input type="number" step="0.01" name="taskBudget"></div></label>
+      <br><br>
+      <label for="experience">Reward for each binary question: <div class="inputTask">$<input type="number" step="0.01" name="taskReward"></div></label>
+      <br><br><br><br>
+      <input type="submit" value="Create Task">
+    </div>
+
+    <table id="detailClass" border="2px">
+      <tr>
+        <td>Upload .txt file(automatically fill the details)</td>
+        <td><input type="file"><button type="button" onclick="helpButton()">HELP</button></td>
+      </tr>
+      <tr>
+        <td>How many classes do you want:</td>
+        <td><input type="number" name="classNumber" id="numberOfClasses" /></td>
+      </tr>
+      <tr>
+        <td>How many features each classes have:</td>
+        <td><input type="number" name="featureNumber" id="numberOfFeatures" /></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button type="button" onclick="createListClass()" id="createTask">Create task </button></td>
+      </tr>
+    </table>
+  </div>
+</form>
+
+</body>
+</html>
