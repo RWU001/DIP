@@ -10,16 +10,18 @@ function createListClass() {
     var class_feature = '<tr id="space"><td></td><td></td></tr>';
     class_feature += '<tr><td id="table-header">Name of Class</td><td id="table-header">Features of Class</td></tr>';
     for (var numclass = 0; numclass < classNumber; numclass++) {
-      class_feature += '<tr id="space"><td>Class ' + numclass+1 + '</td><td></td></tr>';
+      class_feature += '<tr id="space"><td>Class ' + (numclass+1) + '</td><td></td></tr>';
       class_feature += '<tr><td rowspan="' + featuresNumber + '"><input type="text" name="class' + numclass + '" placeholder="class' + numclass + '"></td>';
-      class_feature += '<td><input type="text" name="' + feature + numclass + "1" + '" placeholder="' + feature + numclass + "1" + '"></td></tr>';
+      class_feature += '<td><input type="text" name="feature' + numclass + "0" + '" placeholder="feature' + numclass + "0" + '"></td></tr>';
       for (var numfeature = 1; numfeature < featuresNumber; numfeature++) {
-        class_feature += '<tr><td><input type="text" name="' + feature + numclass + numfeature + '" placeholder="' + feature + numclass + numfeature + '"></td></tr>';
+        class_feature += '<tr><td><input type="text" name="feature' + numclass + numfeature + '" placeholder="feature'+ numclass + numfeature + '"></td></tr>';
       }
       class_feature += '<tr id="space"><td></td><td></td></tr>';
       class_feature += '<tr id="space"><td></td><td></td></tr>';
     }
     detailClass.innerHTML += class_feature;
+    document.getElementById('numberOfFeatures').value = featuresNumber;
+    document.getElementById('numberOfClasses').value = classNumber;
     document.getElementById('createDetails').style.display = 'none';
     // console.log(classNumber + featuresNumber);
   } 
@@ -128,7 +130,6 @@ function setDetails(txt) {
 
   for (var numclass = 0; numclass < classNumber; numclass++) {
     class_feature += '<tr id="space"><td>Class ' + (numclass+1) + '</td><td></td></tr>';
-    console.log('class' + numclass);
     class_feature += '<tr><td rowspan="' + featuresNumber + '"><input type="text" name="class' + numclass + '" placeholder="class' + numclass + '" value="' + classes[numclass] + '"></td>';
     class_feature += '<td><input type="text" name="feature' + numclass + "0" + '" placeholder="feature' + numclass + "0" + '" value="' + features[numclass][0] + '"></td></tr>';
     for (var numfeature = 1; numfeature < featuresNumber; numfeature++) {
