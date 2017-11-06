@@ -9,23 +9,32 @@
 
   <body onload="checkFileAPI();">
        <ul>
-        <a href="requester home.html">Requester Home</a>&nbsp;&nbsp;
+        <a href="../php/querytask.php">Requester Home</a>&nbsp;&nbsp;
         <a href="worker home.html">Worker Home</a>&nbsp;&nbsp;
         <a href="homepage.html">Logout</a>&nbsp;&nbsp;
       </ul>
 
     <h1>REQUESTER UPLOAD</h1>
     <br>
-    <form method="post" action="../php/receive-txt-file.php">
+    <form enctype="multipart/form-data" method="post" action="../php/upload-new-task.php">
       <div class="container">
         <div class="taskQuestion">
-          <label for="taskName">Task Name: <input type="text" class="inputTask" name="taskName"></label>
+          <label for="taskTitle">Task Title: <input type="text" class="inputTask" id="taskName" name="taskTitle"></label>
           <br><br>
-          <label for="experience">Budget: <div class="inputTask">$<input type="number" step="0.01" name="taskBudget"></div></label>
+          <label for="taskBudget">Budget: <div class="inputTask">$<input type="number" step="0.01" id="taskBudget" name="taskBudget"></div></label>
           <br><br>
-          <label for="experience">Reward for each binary question: <div class="inputTask">$<input type="number" step="0.01" name="taskReward"></div></label>
+          <label for="taskReward">Reward for each binary question: <div class="inputTask">$<input type="number" step="0.01" name="taskReward" id="taskReward"></div></label>
           <br><br><br><br>
-          <input type="submit" value="Create Task">
+          <label for="taskName">
+            Upload your images(in zip file): 
+            <br><br>
+            <input type="file" name="zip_file"></label>
+          <br><br><br><br>
+          <div style="width:100%">
+            <center>
+              <input type="submit" value="Create Task" style="font-size:100px;width:30%;">
+            </center>
+          </div>
         </div>
 
         <table id="detailClass" border="2px">
