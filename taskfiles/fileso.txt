@@ -1,0 +1,12 @@
+-Dog
+red nose
+long leg
+beast
+-Cat
+yellow nose
+short leg
+undefined
+-Bird
+fly
+away
+fly can

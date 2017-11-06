@@ -6,15 +6,12 @@ function createListClass() {
   if (!classNumber || !featuresNumber || classNumber <=0 || featuresNumber <= 0) {
     alert("Please fill the number of class and feature correctly!");
   } else {
-    var classes = 'class';
-    var feature = 'feature';
-  
     var detailClass = document.getElementById('detailClass');
     var class_feature = '<tr id="space"><td></td><td></td></tr>';
     class_feature += '<tr><td id="table-header">Name of Class</td><td id="table-header">Features of Class</td></tr>';
     for (var numclass = 0; numclass < classNumber; numclass++) {
       class_feature += '<tr id="space"><td>Class ' + numclass+1 + '</td><td></td></tr>';
-      class_feature += '<tr><td rowspan="' + featuresNumber + '"><input type="text" name="' + classes + numclass + '" placeholder="' + classes + numclass + '"></td>';
+      class_feature += '<tr><td rowspan="' + featuresNumber + '"><input type="text" name="class' + numclass + '" placeholder="class' + numclass + '"></td>';
       class_feature += '<td><input type="text" name="' + feature + numclass + "1" + '" placeholder="' + feature + numclass + "1" + '"></td></tr>';
       for (var numfeature = 1; numfeature < featuresNumber; numfeature++) {
         class_feature += '<tr><td><input type="text" name="' + feature + numclass + numfeature + '" placeholder="' + feature + numclass + numfeature + '"></td></tr>';
@@ -103,8 +100,6 @@ function displayContents(txt) {
 }
 
 function setDetails(txt) {
-  var classes = 'class';
-  var feature = 'feature';
   var classNumber = 0;
   var featuresNumber = 0;
   var classes = [];
@@ -133,16 +128,17 @@ function setDetails(txt) {
 
   for (var numclass = 0; numclass < classNumber; numclass++) {
     class_feature += '<tr id="space"><td>Class ' + (numclass+1) + '</td><td></td></tr>';
-    class_feature += '<tr><td rowspan="' + featuresNumber + '"><input type="text" name="' + classes + numclass + '" placeholder="' + classes + numclass + '" value="' + classes[numclass] + '"></td>';
-    class_feature += '<td><input type="text" name="' + feature + numclass + "0" + '" placeholder="' + feature + numclass + "0" + '" value="' + features[numclass][0] + '"></td></tr>';
+    console.log('class' + numclass);
+    class_feature += '<tr><td rowspan="' + featuresNumber + '"><input type="text" name="class' + numclass + '" placeholder="class' + numclass + '" value="' + classes[numclass] + '"></td>';
+    class_feature += '<td><input type="text" name="feature' + numclass + "0" + '" placeholder="feature' + numclass + "0" + '" value="' + features[numclass][0] + '"></td></tr>';
     for (var numfeature = 1; numfeature < featuresNumber; numfeature++) {
-      class_feature += '<tr><td><input type="text" name="' + feature + numclass + numfeature + '" placeholder="' + feature + numclass + numfeature + '" value="' + features[numclass][numfeature] + '"></td></tr>';
+      class_feature += '<tr><td><input type="text" name="feature' + numclass + numfeature + '" placeholder="feature'+ numclass + numfeature + '" value="' + features[numclass][numfeature] + '"></td></tr>';
     }
     class_feature += '<tr id="space"><td></td><td></td></tr>';
     class_feature += '<tr id="space"><td></td><td></td></tr>';
   }
   detailClass.innerHTML += class_feature;
-
-  
+  document.getElementById('numberOfFeatures').value = featuresNumber;
+  document.getElementById('numberOfClasses').value = classNumber;
 }
 /////////////////////////////////////////////////////////////
