@@ -102,3 +102,30 @@ a {
 	float: right;
 	margin-right: 50px;
 }
+
+th {
+	color:BLUE;
+  font-family:Comic Sans MS;
+	font-weight:bold;
+	font-style:italic;
+	}
+td {color:#00FF00;
+    font-family:Verdana;
+	font-weight:bold;
+    }	
+tr  {background-color:#FEc704;}	
+table {text-align:center;
+       	  
+    }
+	
+#myDIV {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+		display: none;
+}
+
+#logout {
+	float:right;
+	margin-right:20px;
+}
