@@ -50,7 +50,7 @@
         $password = $_POST['password'];
         $encryptPassword = md5($password);
 
-        echo $query = "INSERT INTO `login_requester` (username, password) VALUES ('$username', '$encryptPassword')";
+        echo $query = "INSERT INTO `login_requester` (username, password, wallet) VALUES ('$username', '$encryptPassword', 0)";
         //below is with email
         // echo $query = "INSERT INTO `login_requester` (username, password, email) VALUES ('$username', '$password', '$email')";
         $result = mysqli_query($connection, $query);

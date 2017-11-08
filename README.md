@@ -37,8 +37,7 @@ Something is wrong with the XAMPP installation :-(
 
 ## Things that we may work on
 * Generating questions based on matrix algorithm
-* Getting all the images from compressed file and can get list of the images names + can show the image at the html
-* Adding features of uploading word documents and create the task classes according to the word document (you may set your own text structure at the word document)
+* Get list of the images names + can show the image at the html
 * Set the completion of task at requester side (whether the task already complete)
 * Allow the worker to be able to choose task that he want to do it + the number of questions feature (allow worker to only work for a number of questions).
 * Table structure

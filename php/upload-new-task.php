@@ -125,4 +125,6 @@ if($_FILES["zip_file"]["name"]) {
 $sqlQuery = "INSERT INTO requester_task (ID, USER, TASKTITLE, COMPLETION_OF_TASK, PAYMENT_PROCESS, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH)
 VALUES ('', '$userName', '$taskTitle', '&#x2714', 'HAHAHAA', '$taskReward', '$taskBudget', '$your_own_path', '$notepad_file')";
 $result3 = mysqli_query($mainDb, $sqlQuery);
+
+header("Location: querytask.php");
 ?>

@@ -9,11 +9,12 @@ $query = "CREATE TABLE login_requester (
     USERNAME varchar(255) UNIQUE NOT NULL,
     -- EMAIL varchar(255) UNIQUE NOT NULL,
     PASSWORD varchar(255) NOT NULL,
+    WALLET INT NOT NULL,
     PRIMARY KEY(ID)   
 )";
 $result = mysqli_query($mainDb, $query);
 $passwordRequesterTest = md5("heiho");
-$requesterTable = "INSERT INTO `login_requester` (username, password) VALUES ('heiho', '$passwordRequesterTest')";
+$requesterTable = "INSERT INTO `login_requester` (username, password, wallet) VALUES ('heiho', '$passwordRequesterTest', 0)";
 //below is the create account with email
 // $createAccount = "INSERT INTO `login_requester` (username, password, email) VALUES ('heiho', 'heiho', 'heiho@fakeemail.com')";
 mysqli_query($mainDb, $requesterTable);
