@@ -33,9 +33,8 @@ Crowdsourcing
 <div>
 	<ul>
 		<a href="#">Requester Home</a>&nbsp;&nbsp;
-		<a href="worker-home.html">Worker Home</a>&nbsp;&nbsp;
-		<a href="worker-home.html">Wallet</a>&nbsp;&nbsp;
-		<a href="homepage.html">Logout</a>
+		<a href="worker-home.php">Worker Home</a>&nbsp;&nbsp;
+		<a href="homepage.php">Logout</a>
 		<!-- <form id="myForm" action="../php/logout.php" method="get">
 				<input type="hidden" name="someName" value="helloworld" />
 				<a href="#" onclick="document.getElementById('myForm').submit();">Logout</a>

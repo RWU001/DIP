@@ -10,8 +10,8 @@
   <body onload="checkFileAPI();">
        <ul>
         <a href="../php/querytask.php">Requester Home</a>&nbsp;&nbsp;
-        <a href="worker home.html">Worker Home</a>&nbsp;&nbsp;
-        <a href="homepage.html">Logout</a>&nbsp;&nbsp;
+        <a href="worker home.php">Worker Home</a>&nbsp;&nbsp;
+        <a href="homepage.php">Logout</a>&nbsp;&nbsp;
       </ul>
 
     <h1>REQUESTER UPLOAD</h1>

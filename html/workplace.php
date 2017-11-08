@@ -16,11 +16,11 @@
       <a class="navbar-brand" href="#">Crowdsourcing DIP Project(EE3080)</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="requester home.html">Requester Home</a></li>
-      <li><a href="worker home.html">Worker Home</a></li>
+      <li class="active"><a href="requester-home.php">Requester Home</a></li>
+      <li><a href="worker home.php">Worker Home</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="index.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
 </nav>

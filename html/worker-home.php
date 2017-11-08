@@ -39,9 +39,9 @@
   <body>
     <div>
       <ul>
-        <a href="requester home.html">Requester Home</a>&nbsp;&nbsp;
-        <a href="worker-home.html">Worker Home</a>&nbsp;&nbsp;
-        <a href="homepage.html">Logout</a>&nbsp;&nbsp;
+        <a href="requester-home.php">Requester Home</a>&nbsp;&nbsp;
+        <a href="worker-home.php">Worker Home</a>&nbsp;&nbsp;
+        <a href="homepage.php">Logout</a>&nbsp;&nbsp;
       </ul>
     </div>
 
