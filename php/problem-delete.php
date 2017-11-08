@@ -1,6 +1,6 @@
 <?php
 
-$target_dir = "/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/DogBreeds";
+$target_dir = "/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/akuanakbesar";
 // IF THE DIRECTORY CREATED NEED PERMISSION, DELETE THE FILE USING THIS FUNCTION
 
 function deleteDirectory($dir) {

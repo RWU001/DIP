@@ -2,6 +2,7 @@
 //////////////////////INITIALIZE///////////////////////////////////
   session_start();
   require('connect.php');//Database connection
+  require('problem-delete.php');
   $mainDb = $connection;
 
   $taskTitle = $_POST['taskTitle'];
@@ -33,7 +34,6 @@ if($_FILES["zip_file"]["name"]) {
 	$source = $_FILES["zip_file"]["tmp_name"];
 	$type = $_FILES["zip_file"]["type"];
 
-	///////////////////INITIALIZATION///////////////////
 	// $your_own_path = "/opt/lampp/htdocs/DIPWebsite/dashboard/upload-file/DIP/zip-files/"; //Change this to your own directory folder. This folder path will be a folder which contain lots of taskfolders(each task will have one folder)
 	$your_own_path = $directory;
 	if (substr($type,-3) == 'zip') { //IF THE FILE IS NOT ZIP FILE
@@ -69,6 +69,7 @@ if($_FILES["zip_file"]["name"]) {
 				$zip->close();
         $your_own_path .= 'images/';
         chmod($your_own_path, 0777); //ENABLE deleting the folder for everyone (some delete issue)
+        deleteDirectory($your_own_path . "__MACOSX");
 				unlink($target_path);
 			}
 			$message = "Your .zip file was uploaded and unpacked.";
@@ -108,7 +109,11 @@ if($_FILES["zip_file"]["name"]) {
     echo $classdata;
 
     for ($feature = 0; $feature < $featureNumber; $feature++) {
-      $featuredata = $_POST['feature' . $class . $feature] . "\n";
+      if ($feature == $featureNumber - 1 and $class == $classNumber - 1) {
+        $featuredata = $_POST['feature' . $class . $feature];
+      } else {
+        $featuredata = $_POST['feature' . $class . $feature] . "\n";
+      }
       fwrite($handle, $featuredata);
       echo $featuredata;
     }
@@ -126,5 +131,17 @@ $sqlQuery = "INSERT INTO requester_task (ID, USER, TASKTITLE, COMPLETION_OF_TASK
 VALUES ('', '$userName', '$taskTitle', '&#x2714', 'HAHAHAA', '$taskReward', '$taskBudget', '$your_own_path', '$notepad_file')";
 $result3 = mysqli_query($mainDb, $sqlQuery);
 
+///////////////////////////////////////////////QUERT THE IMAGES name and path to database//////////////////////////////////
+$imagePath = $your_own_path;
+$directorySrc = "../taskfiles/" . $userName . "/" . $taskTitle . "/images/";
+$files1 = scandir($imagePath);
+echo "<br><br><br>";
+  foreach($files1 as $picsName) {
+    if ($picsName[0] != ".") {
+      $image = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
+      VALUES ('', '$picsName', '$directorySrc" . "$picsName', '$taskTitle', '$userName')";
+      mysqli_query($mainDb, $image);
+    } 
+  }
 header("Location: querytask.php");
 ?>

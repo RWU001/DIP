@@ -108,16 +108,16 @@ th {
   font-family:Comic Sans MS;
 	font-weight:bold;
 	font-style:italic;
-	}
-td {color:#00FF00;
-    font-family:Verdana;
+}
+
+td {
+	color: #000;
+  font-family:Verdana;
 	font-weight:bold;
-    }	
-tr  {background-color:#FEc704;}	
-table {text-align:center;
-       	  
-    }
-	
+}	
+
+tr  {background-color:#FEc704;}
+
 #myDIV {
     width: 100%;
     padding: 50px 0;
@@ -128,4 +128,8 @@ table {text-align:center;
 #logout {
 	float:right;
 	margin-right:20px;
+}
+
+#detailClass tr {
+	background-color: #888;
 }

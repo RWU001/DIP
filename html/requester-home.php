@@ -48,7 +48,7 @@ Crowdsourcing
 
 <br><br>
 <div id="center">
-	<a href="upload-new-task.html"><button style="text-align: center;">UPLOAD NEW TASK</button></a>
+	<a href="upload-new-task.php"><button style="text-align: center;">UPLOAD NEW TASK</button></a>
 	<button onclick="myFunction()">WALLET</button>
 	<div id="myDIV">
 		<center>Top Up</center>
