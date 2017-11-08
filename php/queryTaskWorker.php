@@ -29,7 +29,7 @@
       $number++;
     }
     $_SESSION['queryTaskWorker'] = $all_query;
-    header("Location: ../html/worker-home.html");
+    header("Location: ../html/worker-home.php");
   } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }  

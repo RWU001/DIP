@@ -20,12 +20,6 @@ tr  {background-color:#FEc704;}
 table {text-align:center;
        	  
     }
-	
-#myDIV {
-    width: 100%;
-    padding: 50px 0;
-    text-align: center;
-
 </style>
 
 <title>
@@ -35,26 +29,12 @@ Crowdsourcing
 </head>
 
 
-
-<script language="JavaScript" type="text/javascript">
-function myFunction() {
-    var x = document.getElementById("myDIV");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
-</script>
-
-
 <body>
 <div>
 	<ul>
 		<a href="#">Requester Home</a>&nbsp;&nbsp;
-		<a href="worker-home.html">Worker Home</a>&nbsp;&nbsp;
-		<a href="worker-home.html">Wallet</a>&nbsp;&nbsp;
-		<a href="homepage.html">Logout</a>
+		<a href="worker-home.php">Worker Home</a>&nbsp;&nbsp;
+		<a href="homepage.php">Logout</a>
 		<!-- <form id="myForm" action="../php/logout.php" method="get">
 				<input type="hidden" name="someName" value="helloworld" />
 				<a href="#" onclick="document.getElementById('myForm').submit();">Logout</a>
@@ -83,21 +63,7 @@ function myFunction() {
 
 <br><br>
 <div id="center">
-<a href="upload-new-task.html"><button style="text-align: center;">UPLOAD NEW TASK</button></a>
-<button onclick="myFunction()">WALLET</button>
-
-<div id="myDIV">
-<center>Top Up</center>
-    <form name="wallet" action="../php/wallet.php" method="post">
-      <center>Amount to top up:</center>
-      <center><input type="number" name="number" size="14" /></center>
-      <center><input type="submit" name="wallet" value="Add Wallet" /></center>
-
-
-    </form>
-</div>
-
-
+<a href="upload-new-task.php"><button style="text-align: center;">UPLOAD NEW TASK</button></a>
 </div>
 
 </body>

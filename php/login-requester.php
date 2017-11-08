@@ -39,7 +39,7 @@
     if (isset($_SESSION['username'])) {
       header("Location: querytask.php");
     } else {
-      header("Location: ../html/homepage.html");
+      header("Location: ../html/homepage.php");
     }
     //3.2 When the user visits the page first time, simple login form will be displayed.
   } else if (isset($_POST['register'])) {
@@ -61,7 +61,7 @@
             $msg ="User Registration Failed";
         }
         $_SESSION['message'] = $msg;
-        header("Location: ../html/homepage.html");
+        header("Location: ../html/homepage.php");
       }
   }
 ?>

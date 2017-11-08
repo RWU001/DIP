@@ -20,6 +20,12 @@ tr  {background-color:#FEc704;}
 table {text-align:center;
        	  
     }
+	
+#myDIV {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+
 </style>
 
 <title>
@@ -27,6 +33,19 @@ Crowdsourcing
 </title>
 
 </head>
+
+
+
+<script language="JavaScript" type="text/javascript">
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
 
 
 <body>
@@ -65,6 +84,20 @@ Crowdsourcing
 <br><br>
 <div id="center">
 <a href="upload-new-task.html"><button style="text-align: center;">UPLOAD NEW TASK</button></a>
+<button onclick="myFunction()">WALLET</button>
+
+<div id="myDIV">
+<center>Top Up</center>
+    <form name="wallet" action="../php/wallet.php" method="post">
+      <center>Amount to top up:</center>
+      <center><input type="number" name="number" size="14" /></center>
+      <center><input type="submit" name="wallet" value="Add Wallet" /></center>
+
+
+    </form>
+</div>
+
+
 </div>
 
 </body>
