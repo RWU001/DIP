@@ -9,6 +9,7 @@
   $taskBudget = $_POST['taskBudget'];
   $taskReward = $_POST['taskReward'];
   $userName = $_SESSION['username'];
+  $wallet = $_SESSION['wallet'];
 
   /////////////////////////DIRECTORY////////////////////////////////////////  
   $directory = "/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/". $userName . "/"; //Change to your own directory
@@ -24,6 +25,17 @@
     mkdir($directory, 0777); //0777 so everyone will have permission to open it also can delete the folder
     umask($oldmask);
   }
+
+
+///////////////////////////////////////////DEDUCT THE WALLET//////////////////////////////////
+if ($wallet < $taskBudget) {
+  $_SESSION['errorMessage'] = "Insufficient Balance";
+  header("Location: error-message.php");
+  exit;
+}
+$deductWallet = "UPDATE login_requester SET WALLET=WALLET-'$taskBudget' WHERE USERNAME='" . $userName . "'";
+mysqli_query($mainDb, $deductWallet);
+
 
 /////////////////////////////////////////////EXTRACT THE ZIP FILE////////////////////////////////////////////
 //This file will receive ONLY uploaded ZIP file and will extract it to a new unique folder name inside folder name zip_file and will update the database 
@@ -143,5 +155,8 @@ echo "<br><br><br>";
       mysqli_query($mainDb, $image);
     } 
   }
+
+
+///////////////////back to page////////////////////
 header("Location: querytask.php");
 ?>
