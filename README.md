@@ -11,7 +11,7 @@
 * After that, you can create/go to your desired directory. After you decided which directory, you need to go back one folder before the desired folder(so you can see your own folder)
 * Remember that your folder must be inside the htdocs folder(after you press explore button, find htdocs folder) ex: htdocs/DIPWebsite
 * open your terminal (in windows, command prompt) and type 'cd' (without pressing enter), drag your desired folder(DIPWebsite) to the terminal/cmd window then press enter
-* then type 'git init' and after that 'git clone -b <branch> <remote_repo>'. Change <branch> with name of branch that you want to download. Change <remote_repo> to the link that provided after pressing Clone or download button at GitHub website.
+* then type 'git init' and after that 'git clone -b {branch} {remote_repo}'. Change {branch} with name of branch that you want to download. Change {remote_repo} to the link that provided after pressing Clone or download button at GitHub website.
 * With all steps above, you will have all the files in that branch in the folder(DIPWebsite)
 * Change your index.php(in htdocs) at line 8 to direct the page that you want to show whenever you go to localhost:8080 like below
 ```
