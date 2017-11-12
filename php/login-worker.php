@@ -1,15 +1,14 @@
 <?php
   //Start the Session
   session_start();
-  require('connect.php');
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "DIP_CROWDSOURCING";
-  // Create connection
-  $conn = mysqli_connect($servername, $username, $password, $dbname);
+  require('connect.php');  // Create connection to DB
 
   $usernameErr = "";
+  //Function to secure the login
+  function make_safe($variable, $connection) {
+    $variable = mysqli_real_escape_string($connection, trim($variable));
+    return $variable;
+  }
 
   //3. If the form is submitted or not.
   //3.1 If the form is submitted
@@ -17,8 +16,8 @@
     //update action
     if (isset($_POST['username']) and isset($_POST['password'])) {
       //3.1.1 Assigning posted values to variables.
-      $username = $_POST['username'];
-      $password = $_POST['password'];
+      $username = make_safe($_POST['username'], $connection);
+      $password = make_safe($_POST['password'], $connection);
       $encryptPassword = md5($password);
   
       //3.1.2 Checking the values are existing in the database or not
@@ -57,9 +56,8 @@
   } else if (isset($_POST['register'])) {
       //delete action
       if (isset($_POST['username']) && isset($_POST['password'])){
-        $username = $_POST['username'];
-        $email = "Alfred1datui@gmail.com";
-        $password = $_POST['password'];
+        $username = make_safe($_POST['username'], $connection);
+        $password = make_safe($_POST['password'], $connection);
         $encryptPassword = md5($password);
 
         echo $query = "INSERT INTO `login_worker` (username, password) VALUES ('$username', '$encryptPassword')";
