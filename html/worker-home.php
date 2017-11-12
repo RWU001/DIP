@@ -4,6 +4,7 @@
 
   <head>
     <title>Worker Home Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <meta charset="utf-8">
     <!-- <style>
     body {background-color: powderblue;}
@@ -11,12 +12,10 @@
     </style> -->
   </head>
 
-  <script>
-    var AQ = "500";
-    var AM = "5"
-  </script>
-
   <style type="text/css">
+    .test {
+      
+    }
     th {
       color:BLUE;
       font-family:Comic Sans MS;
@@ -51,12 +50,21 @@
 
     <hr>
 
-    <center>
-      <form action="/work_page.html">
-      <h3>
+    <form action="../php/workspace.php" method="post">
+      <div class="taskListBox">
+        <h2 class="taskListTitle">Task List</h2>
+        <div id="taskList">
+          <?php
+              session_start();
+              $request = $_SESSION['queryTaskWorker'];
+              echo $request;
+          ?>
+        </div>
+      </div>
+      <div class="workerDetails">
+        <h3>
         Accumulated number of question answered: 
         <?php
-          session_start(); 
           if (isset($_SESSION['question1'])) {
             $question = $_SESSION['question1'];
             echo $question;
@@ -64,8 +72,8 @@
             echo "#ERROR";
           }
         ?>
-      </h3>
-      <h3>
+        </h3>
+        <h3>
         Accumulated amount of money earned:
         <?php
         if (isset($_SESSION['money'])) {
@@ -74,26 +82,26 @@
         } else {
           echo "#ERROR";
         }
-      ?>
-      </h3>
-      <a href="history.html">
-        <h4>View answered history</h4>
-      </a>
-      <table Border="10" width="1000" cellpadding="20" table style="margin: 0px auto;">
-
-        <tr>
-        <th>TASK TITLE</th>
-        <th>Number of questions requested in this round:</th>
-        </tr>
-
-        <?php
-          $request = $_SESSION['queryTaskWorker'];
-          echo $request;
         ?>
-      </table>
-
-      <br/>
-      </form>
-    </center>
+        </h3>
+        <a href="history.html">
+          <h4>View answered history</h4>
+        </a>
+        <br>
+        <label>
+          <p><span class="numberQuestion">Number of Question:</span> <input type="number" max="200" name="numberQuestion" id="numberQuestion"></p>
+        </label>
+        <input type="text" name="taskTitle" id="test" style="visibility: hidden" required/>
+        <br>
+        <input type="submit" value="Start Working!" id="startWorker">
+      </div>
+    </form>
+    <!-- <form name="test" action="../php/test.php" method="post">
+    <center>Amount to top up:</center>
+    <center><input type="text" name="asd" id="test" style="visibility: hidden" required/></center>
+    <center><input type="submit" value="submit"/></center>
+  </form> -->
+  </div>
+  <script src="../js/worker-home.js"></script>
   </body>
 </html>

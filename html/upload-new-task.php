@@ -19,16 +19,34 @@
     <form enctype="multipart/form-data" method="post" action="../php/upload-new-task.php">
       <div class="container">
         <div class="taskQuestion">
-          <label for="taskTitle">Task Title: <input type="text" class="inputTask" id="taskName" name="taskTitle"></label>
+          <label for="taskTitle">
+            Task Title: 
+            <input type="text" class="inputTask" id="taskName" name="taskTitle" required>
+          </label>
           <br><br>
-          <label for="taskBudget">Budget: <div class="inputTask">$<input type="number" step="0.01" id="taskBudget" name="taskBudget"></div></label>
+          <label for="taskBudget">
+            Budget: 
+            <div class="inputTask">
+              $<input type="number" step="0.01" id="taskBudget" name="taskBudget" required>
+            </div>
+          </label>
           <br><br>
-          <label for="taskReward">Reward for each binary question: <div class="inputTask">$<input type="number" step="0.01" name="taskReward" id="taskReward"></div></label>
-          <br><br><br><br>
+          <label for="taskReward">
+            Reward for each binary question: 
+            <div class="inputTask">
+              $<input type="number" step="0.01" name="taskReward" id="taskReward" required>
+            </div>
+          </label>
+          <br><br>
+          <label for="taskDescription">
+            Description of task: <br>
+            <textarea name="taskDescription" id="taskDescription" maxlength="370" required></textarea>
+          </label>
+          <br><br><br><br><br><br><br><br>
           <label for="taskName">
             Upload your images(in zip file): 
-            <br><br>
-            <input type="file" name="zip_file"></label>
+            <br>
+            <input type="file" name="zip_file" id="zip_file" required></label>
           <br><br><br><br>
           <div style="width:100%">
             <center>
@@ -44,11 +62,11 @@
           </tr>
           <tr>
             <td>How many classes do you want:</td>
-            <td><input type="number" name="classNumber" id="numberOfClasses" /></td>
+            <td><input type="number" name="classNumber" id="numberOfClasses"  required/></td>
           </tr>
           <tr>
             <td>How many features each classes have:</td>
-            <td><input type="number" name="featureNumber" id="numberOfFeatures" /></td>
+            <td><input type="number" name="featureNumber" id="numberOfFeatures"  required/></td>
           </tr>
           <tr>
             <td></td>

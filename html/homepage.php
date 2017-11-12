@@ -42,9 +42,9 @@
     <center>HI Requester!</center>
     <form name="login" action="../php/login-requester.php" method="post">
       <center>Username:</center>
-      <center><input name="username" size="14" /></center>
+      <center><input name="username" size="14" required/></center>
       <center>Password:</center>
-      <center><input name="password" type="password" size="14" /></center>
+      <center><input name="password" type="password" size="14" required/></center>
       <center><input type="submit" name="login" value="login" /></center>
       <center onclick="loginRequester('hide')" class="buttonClose">x</center> 
       <center><input type="submit" name="register" value="Sign Up" /></center>
@@ -55,9 +55,9 @@
     <center>HI Worker!</center>
     <form name="login" action="../php/login-worker.php" method="post">
       <center>Username:</center>
-      <center><input name="username" size="14"/></center>
+      <center><input name="username" size="14" required/></center>
       <center>Password:</center>
-      <center><input name="password" type="password" size="14"/></center>
+      <center><input name="password" type="password" size="14" required/></center>
       <center><input type="submit" name="login" value="login" /></center>
       <center onclick="loginWorker('hide')" class="buttonClose">x</center> 
       <center><input type="submit" name="register" value="Sign Up" /></center>

@@ -54,7 +54,7 @@ Crowdsourcing
 		<center>Top Up</center>
 		<form name="wallet" action="../php/wallet.php" method="post">
 			<center>Amount to top up:</center>
-			<center><input type="number" name="number" size="14" /></center>
+			<center><input type="number" name="number" size="14" required/></center>
 			<center><input type="submit" name="wallet" value="Add Wallet" /></center>
 		</form>
 	</div>

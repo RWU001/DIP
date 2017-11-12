@@ -100,7 +100,7 @@ a {
 
 .inputTask {
 	float: right;
-	margin-right: 50px;
+	margin-right: 10%;
 }
 
 th {
@@ -132,4 +132,88 @@ tr  {background-color:#FEc704;}
 
 #detailClass tr {
 	background-color: #888;
+}
+
+#taskDescription {
+	float: right;
+	width: 88.5%;
+	height: 100px;
+	margin-right: 10%;
+	margin-top: 2%;
+	text-align: top;
+}
+
+#zip_file {
+	margin-top: 2%;
+}
+
+.taskListTitle {
+	font-size: 25px;
+	display: block;
+	background-color: #EDB613;
+	margin: 0;
+	padding: 20px;
+	text-align: center;
+	border: 2px solid black;
+}
+
+.taskListBox {
+	width: 50%;
+	border: 1px solid black;
+	/* background-color: #777777; */
+	background-color: #7fb4cf;
+	height: 400px;
+	display: inline;
+	float: left;
+}
+
+.workerDetails {
+	width: 39%;
+	display: inline;
+	float: left;
+	padding-left: 20px;
+	font-size: 12px;
+}
+
+.workerQueryTitle {
+	font-size: 23px;
+	font-weight: bold;
+	color: #000;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.workerQueryTitle:hover {
+	color: green;
+	cursor: pointer;
+}
+
+.workerQueryDescription {
+	color: #555;
+	margin: 0;
+	margin-bottom: 10px;
+	padding-top: 0px;
+}
+
+.QueryTaskWorker {
+	border: 2px solid black;
+}
+
+#taskList {
+	height: 350px;
+	overflow: scroll;
+}
+
+.pricePerQuestion {
+	font-size: 14px;
+	float: right;
+	color: black;
+}
+
+.numberQuestion {
+	font-size: 18px;
+}
+
+#startWorker {
+	float: left;
 }
