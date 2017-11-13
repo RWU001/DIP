@@ -1,3 +1,7 @@
+<?php
+	require('../php/directing.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <link rel="stylesheet" href="../css/general.css">
@@ -55,7 +59,6 @@
         <h2 class="taskListTitle">Task List</h2>
         <div id="taskList">
           <?php
-              session_start();
               $request = $_SESSION['queryTaskWorker'];
               echo $request;
           ?>

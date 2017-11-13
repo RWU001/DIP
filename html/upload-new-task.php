@@ -1,3 +1,7 @@
+<?php
+	require('../php/directing.php');
+?>
+
 <!DOCTYPE html>
 <html>
   <head>

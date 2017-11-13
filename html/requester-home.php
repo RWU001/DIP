@@ -1,3 +1,7 @@
+<?php
+	require('../php/directing.php');
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -26,7 +30,6 @@ Crowdsourcing
 
 <h1>REQUESTER PROFILE PAGE</h1>
 <?php
-	session_start();
 	$wallet = $_SESSION['wallet'];
 	echo "<div><center>Your wallet is $" . $wallet . "</center></div><br>";
 ?>
