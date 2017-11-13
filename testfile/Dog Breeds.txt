@@ -1,0 +1,20 @@
+-Australian Terrier Azawakh
+Tall
+furry
+4 legs
+-Airedale Terrier
+Short
+furry
+4 legs
+-Appenzeller Sennenhunde
+Tall
+bald
+2 legs
+-Beagle
+Short
+bald
+4 legs
+-Bloodhound
+Tall
+furry
+2 legs
