@@ -63,16 +63,7 @@ Crowdsourcing
 	</div>
 </div>
 
-<script language="JavaScript" type="text/javascript">
-function myFunction() {
-    var x = document.getElementById("myDIV");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
-myFunction();
+<script src="../js/requester-home.js"></script>
 </script>
 </body>
 </html>

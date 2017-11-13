@@ -10,20 +10,22 @@
     $request = mysqli_query($connection, $sql);
     $all_query = "";
     while($row = $request->fetch_assoc()) {
+      $title = $row['TASKTITLE'];
       $all_query = $all_query . "<tr>";
-      $all_query = $all_query . "<td><center><font color='green'>" . $row['TASKTITLE'] . "</font></center></td>";
+      $all_query = $all_query . "<td><center><font color='green'>$title</font></center></td>";
       $all_query = $all_query . "<td><center>" . $row['COMPLETION_OF_TASK'] . "</center></td>";
       $all_query = $all_query . "<td><center><font color='red'>" . $row['PAYMENT_PROCESS'] . "</font></center></td>";
 
-      $queryLibrary = "SELECT * FROM `images_library` WHERE tasktitle='" . $row['TASKTITLE'] . "'";
+      $queryLibrary = "SELECT * FROM `images_library` WHERE tasktitle='$title' and username='$userName'";
       $resultLibrary = mysqli_query($connection, $queryLibrary) or die(mysqli_error($connection));
       $countLibrary = mysqli_num_rows($resultLibrary);
-      $queryFinished = "SELECT * FROM `finished_images` WHERE tasktitle='" . $row['TASKTITLE'] . "'";
+      $queryFinished = "SELECT * FROM `finished_images` WHERE tasktitle='$title'";
       $resultFinished = mysqli_query($connection, $queryFinished) or die(mysqli_error($connection));
       $countFinished = mysqli_num_rows($resultFinished);
 
       if ($countFinished == $countLibrary) {
-        $all_query = $all_query . "<td><center><button>Download</button></center></td>";
+        $button = "downloadResult(123)";
+        $all_query = $all_query . "<td><center><button onclick='" . 'downloadResult("' . $title . '")' . "'>Download</button></center></td>";
       } else {
         $all_query = $all_query . "<td></td>";
       }
