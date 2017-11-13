@@ -13,7 +13,12 @@
       $title = $row['TASKTITLE'];
       $all_query = $all_query . "<tr>";
       $all_query = $all_query . "<td><center><font color='green'>$title</font></center></td>";
-      $all_query = $all_query . "<td><center>" . $row['COMPLETION_OF_TASK'] . "</center></td>";
+      $sign = $row['COMPLETION_OF_TASK'];
+      if ($sign == '&#x2716') {
+        $all_query = $all_query . "<td><center style='color:red'>" . $row['COMPLETION_OF_TASK'] . "</center></td>";
+      } else {
+        $all_query = $all_query . "<td><center style='color:green'>" . $row['COMPLETION_OF_TASK'] . "</center></td>";
+      }
       $all_query = $all_query . "<td><center><font color='red'>" . $row['PAYMENT_PROCESS'] . "</font></center></td>";
 
       $queryLibrary = "SELECT * FROM `images_library` WHERE tasktitle='$title' and username='$userName'";
