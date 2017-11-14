@@ -16,29 +16,6 @@
     </style> -->
   </head>
 
-  <style type="text/css">
-    .test {
-      
-    }
-    th {
-      color:BLUE;
-      font-family:Comic Sans MS;
-      font-weight:bold;
-      font-style:italic;
-      }
-    td {color:#000;
-        font-family:Verdana;
-      font-weight:bold;
-        }	
-    tr {
-      background-color:#FEc704;
-    }	
-    table {
-      text-align:center;
-      font-size: 18px;
-    }
-  </style>
-
   <body>
     <div>
       <ul>
