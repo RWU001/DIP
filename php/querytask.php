@@ -14,12 +14,6 @@
       $all_query = $all_query . "<tr>";
       $all_query = $all_query . "<td><center><font color='green'>$title</font></center></td>";
       $sign = $row['COMPLETION_OF_TASK'];
-      if ($sign == '&#x2716') {
-        $all_query = $all_query . "<td><center style='color:red'>" . $row['COMPLETION_OF_TASK'] . "</center></td>";
-      } else {
-        $all_query = $all_query . "<td><center style='color:green'>" . $row['COMPLETION_OF_TASK'] . "</center></td>";
-      }
-      $all_query = $all_query . "<td><center><font color='red'>" . $row['PAYMENT_PROCESS'] . "</font></center></td>";
 
       $queryLibrary = "SELECT * FROM `images_library` WHERE tasktitle='$title' and username='$userName'";
       $resultLibrary = mysqli_query($connection, $queryLibrary) or die(mysqli_error($connection));
@@ -29,9 +23,12 @@
       $countFinished = mysqli_num_rows($resultFinished);
 
       if ($countFinished == $countLibrary) {
-        $button = "downloadResult(123)";
+        $all_query = $all_query . "<td><center style='color:green'>&#x2714</center></td>";
+        $all_query = $all_query . "<td><center><progress value='100' max='100'></progress></center></td>";
         $all_query = $all_query . "<td><center><button onclick='" . 'downloadResult("' . $title . '")' . "'>Download</button></center></td>";
       } else {
+        $all_query = $all_query . "<td><center style='color:red'>&#x2716</center></td>";
+        $all_query = $all_query . "<td><center><progress value='$countFinished' max='$countLibrary'></font></center></td>";
         $all_query = $all_query . "<td></td>";
       }
       $all_query = $all_query . "</tr>";

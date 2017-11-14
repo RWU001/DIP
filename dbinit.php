@@ -43,8 +43,6 @@ $tableRequesterTask = "CREATE TABLE requester_task (
     ID int NOT NULL AUTO_INCREMENT,
     USER varchar(255) NOT NULL,
     TASKTITLE varchar(255) NOT NULL,
-    COMPLETION_OF_TASK varchar(255) NOT NULL,
-    PAYMENT_PROCESS varchar(255) NOT NULL,
     PRICE_PER_QUESTION FLOAT(5) NOT NULL,
     BUDGET int NOT NULL,
     IMAGE_PATH varchar(255) NOT NULL,
@@ -54,18 +52,18 @@ $tableRequesterTask = "CREATE TABLE requester_task (
     UNIQUE (TASKTITLE)
 )";
 
-$sql1 = "INSERT INTO requester_task (ID, USER, TASKTITLE, COMPLETION_OF_TASK, PAYMENT_PROCESS, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES ('', 'heiho', 'DOnkey', '&#x2716', 'HAHAHAA', 0.05, 200, 'ha', 'hi', 'test')";
-$sql2 = "INSERT INTO requester_task (ID, USER, TASKTITLE, COMPLETION_OF_TASK, PAYMENT_PROCESS, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES ('', 'heiho', 'Birds', '&#x2716', 'HAHAHAA', 0.04, 700, 'ha1', 'hi8', 'test')";
-$sql3 = "INSERT INTO requester_task (ID, USER, TASKTITLE, COMPLETION_OF_TASK, PAYMENT_PROCESS, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES ('', 'Donny', 'Cats', '&#x2716', 'HAHAHAA', 0.03, 600, 'ha2', 'hi7', 'test')";
-$sql4 = "INSERT INTO requester_task (ID, USER, TASKTITLE, COMPLETION_OF_TASK, PAYMENT_PROCESS, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES ('', 'alfred', 'Dogs', '&#x2716', 'HAHAHAA', 0.02, 300, 'ha3', 'hi6', 'test')";
-$sql5 = "INSERT INTO requester_task (ID, USER, TASKTITLE, COMPLETION_OF_TASK, PAYMENT_PROCESS, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES ('', 'benny', 'Seal', '&#x2716', 'HAHAHAA', 0.01, 100, 'ha4', 'hi5', 'test')";
-$sql6 = "INSERT INTO requester_task (ID, USER, TASKTITLE, COMPLETION_OF_TASK, PAYMENT_PROCESS, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES ('', 'heiho', 'Dog Breeds', '&#x2714', 'HAHAHAA', 0.01, 100, '/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/heiho/Dog Breeds/images/', '/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/heiho/Dog Breeds/Dog Breeds.txt', 'This task goal is to differentiate the dog breed according to features that you will be asked. Please answer it with 100% accuracy as the question will be simple.')";
+$sql1 = "INSERT INTO requester_task (ID, USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+VALUES ('', 'heiho', 'DOnkey', 0.05, 200, 'ha', 'hi', 'test')";
+$sql2 = "INSERT INTO requester_task (ID, USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+VALUES ('', 'heiho', 'Birds', 0.04, 700, 'ha1', 'hi8', 'test')";
+$sql3 = "INSERT INTO requester_task (ID, USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+VALUES ('', 'Donny', 'Cats', 0.03, 600, 'ha2', 'hi7', 'test')";
+$sql4 = "INSERT INTO requester_task (ID, USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+VALUES ('', 'alfred', 'Dogs', 0.02, 300, 'ha3', 'hi6', 'test')";
+$sql5 = "INSERT INTO requester_task (ID, USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+VALUES ('', 'benny', 'Seal', 0.01, 100, 'ha4', 'hi5', 'test')";
+$sql6 = "INSERT INTO requester_task (ID, USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+VALUES ('', 'heiho', 'Dog Breeds', 0.01, 100, '/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/heiho/Dog Breeds/images/', '/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/heiho/Dog Breeds/Dog Breeds.txt', 'This task goal is to differentiate the dog breed according to features that you will be asked. Please answer it with 100% accuracy as the question will be simple.')";
 
 mysqli_query($mainDb, $tableRequesterTask);
 mysqli_query($mainDb, $sql1);

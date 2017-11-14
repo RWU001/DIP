@@ -36,6 +36,7 @@ if ($wallet < $taskBudget) {
 }
 $deductWallet = "UPDATE login_requester SET WALLET=WALLET-'$taskBudget' WHERE USERNAME='" . $userName . "'";
 mysqli_query($mainDb, $deductWallet);
+$_SESSION['wallet'] -= $taskBudget;
 
 
 /////////////////////////////////////////////EXTRACT THE ZIP FILE////////////////////////////////////////////
@@ -140,8 +141,8 @@ if($_FILES["zip_file"]["name"]) {
 
 
 ////////////////////////////////////////////QUERY A NEW TASK//////////////////////////////
-$sqlQuery = "INSERT INTO requester_task (ID, USER, TASKTITLE, COMPLETION_OF_TASK, PAYMENT_PROCESS, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES ('', '$userName', '$taskTitle', '&#x2714', 'HAHAHAA', '$taskReward', '$taskBudget', '$your_own_path', '$notepad_file', '$taskDescription')";
+$sqlQuery = "INSERT INTO requester_task (ID, USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+VALUES ('', '$userName', '$taskTitle', '$taskReward', '$taskBudget', '$your_own_path', '$notepad_file', '$taskDescription')";
 $result3 = mysqli_query($mainDb, $sqlQuery);
 
 ///////////////////////////////////////////////QUERT THE IMAGES name and path to database//////////////////////////////////

@@ -39,7 +39,7 @@ Crowdsourcing
 <tr>
 <th>TASK TITLE</th>
 <th>COMPLETION OF TASK</th>
-<th>PAYMENT PROCESS</th>
+<th>PROGRESS</th>
 <th>RESULT</th>
 </tr>
 
