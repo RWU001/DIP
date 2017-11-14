@@ -18,7 +18,7 @@ Crowdsourcing
 <body>
 <div>
 	<ul>
-		<a href="#">Requester Home</a>&nbsp;&nbsp;
+		<a href="../php/querytask.php">Requester Home</a>&nbsp;&nbsp;
 		<a href="worker-home.php">Worker Home</a>&nbsp;&nbsp;
 		<a href="homepage.php" id="logout">Logout</a>
 		<!-- <form id="myForm" action="../php/logout.php" method="get">
