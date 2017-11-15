@@ -88,26 +88,36 @@ $tableImages = "CREATE TABLE images_library (
     FOREIGN KEY (USERNAME) REFERENCES login_requester(USERNAME)
 )";
 
+$src0 = "<img src=\"https://upload.wikimedia.org/wikipedia/en/d/d4/Mickey_Mouse.png\" style=\"width:300px;\" id=\"shownPicture\">";
+$src1 = "<img src=\"https://upload.wikimedia.org/wikipedia/en/d/d4/Mickey_Mouse.png\" style=\"width:300px;\" id=\"shownPicture\">";
+$src2 = "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog111.jpeg\" style=\"width:300px;\" id=\"shownPicture\">";
+$src3 = "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog222.jpg\" style=\"width:300px;\" id=\"shownPicture\">";
+$src4 = "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog333.jpeg\" style=\"width:300px;\" id=\"shownPicture\">";
+$src5 = "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog444.jpg\" style=\"width:300px;\" id=\"shownPicture\">";
+$src6 = "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog555.png\" style=\"width:300px;\" id=\"shownPicture\">";
+$src7 = "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog666.jpg\" style=\"width:300px;\" id=\"shownPicture\">";
+$src8 = "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog777.jpg\" style=\"width:300px;\" id=\"shownPicture\">";
+$src9 = "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog888?.png\" style=\"width:300px;\" id=\"shownPicture\">";
 $image0 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'testing', 'https://upload.wikimedia.org/wikipedia/en/d/d4/Mickey_Mouse.png', 'DOnkey', 'heiho')";
+VALUES ('', 'testing', '$src0', 'DOnkey', 'heiho')";
 $image1 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'testing', 'https://upload.wikimedia.org/wikipedia/en/d/d4/Mickey_Mouse.png', 'Birds', 'heiho')";
+VALUES ('', 'testing', '$src1', 'Birds', 'heiho')";
 $image2 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'Dog111.jpeg', '../taskfiles/heiho/Dog Breeds/images/Dog111.jpeg', 'Dog Breeds', 'heiho')";
+VALUES ('', 'Dog111.jpeg', '$src2', 'Dog Breeds', 'heiho')";
 $image3 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'Dog222.jpg', '../taskfiles/heiho/Dog Breeds/images/Dog222.jpg', 'Dog Breeds', 'heiho')";
+VALUES ('', 'Dog222.jpg', '$src3', 'Dog Breeds', 'heiho')";
 $image4 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'Dog333.jpeg', '../taskfiles/heiho/Dog Breeds/images/Dog333.jpeg', 'Dog Breeds', 'heiho')";
+VALUES ('', 'Dog333.jpeg', '$src4', 'Dog Breeds', 'heiho')";
 $image5 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'Dog444.jpg', '../taskfiles/heiho/Dog Breeds/images/Dog444.jpg', 'Dog Breeds', 'heiho')";
+VALUES ('', 'Dog444.jpg', '$src5', 'Dog Breeds', 'heiho')";
 $image6 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'Dog555.png', '../taskfiles/heiho/Dog Breeds/images/Dog555.png', 'Dog Breeds', 'heiho')";
+VALUES ('', 'Dog555.png', '$src6', 'Dog Breeds', 'heiho')";
 $image7 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'Dog666.jpg', '../taskfiles/heiho/Dog Breeds/images/Dog666.jpg', 'Dog Breeds', 'heiho')";
+VALUES ('', 'Dog666.jpg', '$src7', 'Dog Breeds', 'heiho')";
 $image8 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'Dog777.jpg', '../taskfiles/heiho/Dog Breeds/images/Dog777.jpg', 'Dog Breeds', 'heiho')";
+VALUES ('', 'Dog777.jpg', '$src8', 'Dog Breeds', 'heiho')";
 $image9 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'Dog888?.png', '../taskfiles/heiho/Dog Breeds/images/Dog888?.png', 'Dog Breeds', 'heiho')";
+VALUES ('', 'Dog888?.png', '$src9', 'Dog Breeds', 'heiho')";
 
 mysqli_query($mainDb, $tableImages);
 mysqli_query($mainDb, $image0);

@@ -12,7 +12,7 @@
   $userName = $_SESSION['username'];
   $wallet = $_SESSION['wallet'];
 
-  /////////////////////////DIRECTORY////////////////////////////////////////  
+//   /////////////////////////DIRECTORY////////////////////////////////////////  
   $directory = "/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/". $userName . "/"; //Change to your own directory
   if (!file_exists($directory)) {
     $oldmask = umask(0);
@@ -28,7 +28,7 @@
   }
 
 
-///////////////////////////////////////////DEDUCT THE WALLET//////////////////////////////////
+// ///////////////////////////////////////////DEDUCT THE WALLET//////////////////////////////////
 if ($wallet < $taskBudget) {
   $_SESSION['errorMessage'] = "Insufficient Balance";
   header("Location: error-message.php");
@@ -49,9 +49,11 @@ if($_FILES["zip_file"]["name"]) {
 	$type = $_FILES["zip_file"]["type"];
 
 	// $your_own_path = "/opt/lampp/htdocs/DIPWebsite/dashboard/upload-file/DIP/zip-files/"; //Change this to your own directory folder. This folder path will be a folder which contain lots of taskfolders(each task will have one folder)
-	$your_own_path = $directory;
-	if (substr($type,-3) == 'zip') { //IF THE FILE IS NOT ZIP FILE
-		$name = explode(".", $filename);
+  $your_own_path = $directory;
+  $name = explode(".", $filename);
+	if (name[1] == 'zip') { //IF THE FILE IS NOT ZIP FILE
+    print_r($name);
+    echo "    ";
 		$accepted_types = array('application/zip', 'application/x-zip-compressed', 'multipart/x-zip', 'application/x-compressed');
 		foreach($accepted_types as $mime_type) {
 			if($mime_type == $type) {
@@ -93,7 +95,8 @@ if($_FILES["zip_file"]["name"]) {
 		}
 		if($message) echo "<p>$message</p>"; 
 	} else {
-		echo "THE FILE IS NOT A ZIP FILE";
+    $_SESSION['message'] = "THE FILE IS NOT A ZIP FILE";
+    header("Location: ../html/upload-new-task.php");
 	}
 }
 
@@ -152,8 +155,9 @@ $files1 = scandir($imagePath);
 echo "<br><br><br>";
   foreach($files1 as $picsName) {
     if ($picsName[0] != ".") {
+      $src = "<img src=\"$directorySrc$picsName\" style=\"width:300px;\" id=\"shownPicture\">";
       $image = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-      VALUES ('', '$picsName', '$directorySrc" . "$picsName', '$taskTitle', '$userName')";
+      VALUES ('', '$picsName', '$src', '$taskTitle', '$userName')";
       mysqli_query($mainDb, $image);
     } 
   }

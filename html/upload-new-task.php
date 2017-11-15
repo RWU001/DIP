@@ -80,4 +80,12 @@
       </div>
     </form>
   </body>
+  <?php
+    session_start();
+    if (isset($_SESSION['message'])) {
+      $message = $_SESSION['message'];
+      echo "<script>alertMessage('$message');</script>";
+    }
+    session_destroy();
+  ?>
 </html>
