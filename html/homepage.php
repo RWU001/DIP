@@ -203,7 +203,27 @@
 				</div>
 			</div>
 		</div>
+		
 		<br>
+
+		<div id="worker" class="fh5co-light-grey">
+			<div class="row animate-box">
+				<div class="col-md-10 col-md-offset-1 fh5co-heading" style="font-size:16px;">
+					<h2 style="font-size:30px;" class="text-center">As a Worker</h2>
+					<p>Nowdays, earning money is difficult and it is relatable for those who keep failed for their full-time application. Fret not, we are here to help you earning money wherever you are and whenever you want.</p>
+					<ul>
+						<li>Register for an account by pressing the login button</li>
+						<li>Select a task that you want to work on</li>
+						<li>Set the number of question that you want to work on</li>
+						<li>Finish the task and get the money according to the price each question</li>
+						<li>You can check your worker status such as money earned and total question answered at your own dashboard</li>
+					</ul>
+					<p style="float:left;margin-bottom:0;">What are you waiting for? Be a requester today!<br></p><br>
+					<p style="float:left"><a class="btn btn-primary btn-demo" onclick="loginWorker('show')" href="#boxWorker"></i> Login</a></p>
+				</div>
+			</div>
+		</div>
+
 		<div id="fh5co-counter" class="fh5co-counters">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3 text-center animate-box">
@@ -230,24 +250,6 @@
 							<span class="fh5co-counter-label">Done Projects</span>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="worker" class="fh5co-light-grey">
-			<div class="row animate-box">
-				<div class="col-md-10 col-md-offset-1 fh5co-heading" style="font-size:16px;">
-					<h2 style="font-size:30px;" class="text-center">As a Worker</h2>
-					<p>Nowdays, earning money is difficult and it is relatable for those who keep failed for their full-time application. Fret not, we are here to help you earning money wherever you are and whenever you want.</p>
-					<ul>
-						<li>Register for an account by pressing the login button</li>
-						<li>Select a task that you want to work on</li>
-						<li>Set the number of question that you want to work on</li>
-						<li>Finish the task and get the money according to the price each question</li>
-						<li>You can check your worker status such as money earned and total question answered at your own dashboard</li>
-					</ul>
-					<p style="float:left;margin-bottom:0;">What are you waiting for? Be a requester today!<br></p><br>
-					<p style="float:left"><a class="btn btn-primary btn-demo" onclick="loginWorker('show')" href="#boxWorker"></i> Login</a></p>
 				</div>
 			</div>
 		</div>

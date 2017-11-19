@@ -1579,7 +1579,7 @@ td {
   margin: 0;
 	margin-top: 10%; 
   padding-top: 10px;
-  margin-left: 28%;
+  margin-left: 25%;
   top: 0px;
 	width: 200px; 
 	height: 150px; 
@@ -1594,3 +1594,88 @@ td {
   cursor: pointer;
 }
 
+.taskListBox {
+	width: 100%;
+	border: 1px solid black;
+	display: inline;
+	float: left;
+}
+
+#taskList {
+	height: 330px;
+	overflow: scroll;
+}
+
+.taskListTitle {
+	font-size: 25px !important;
+	display: block;
+	background-color: #EDB613;
+	margin: 0 !important;
+	padding: 20px;
+	text-align: center;
+  border: 2px solid black;
+}
+
+.pricePerQuestion {
+	font-size: 18px;
+  float: right;
+  margin-right: 20px;
+  color: black;
+}
+
+.numberQuestion {
+	font-size: 18px;
+}
+
+#startWorker {
+	float: left;
+}
+
+.QueryTaskWorker {
+  border: 2px solid black;
+  display: block;
+}
+
+.workerDetails {
+  color: gray;
+	width: 100%;
+	display: inline;
+	float: left;
+	padding-left: 20px;
+	font-size: 12px;
+}
+
+.fh5co-heading h3 {
+  color: gray;
+  font-size: 20px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.workerQueryTitle {
+	font-size: 24px !important;
+	font-weight: bold;
+	color: #000;
+	margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline !important;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 20px;
+}
+
+.workerQueryTitle:hover {
+	color: green;
+	cursor: pointer;
+}
+
+.workerQueryDescription {
+	color: #555;
+	margin: 0;
+	margin-bottom: 10px;
+  padding-top: 0px;
+  margin-left: 20px;
+}
+
+.queryDescriptionMargin {
+  margin-bottom:10px !important;
+}

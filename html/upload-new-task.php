@@ -183,14 +183,14 @@
 				</div>
 
 				<div class="col-md-4 col-md-push-1">
-					<h4>Links</h4>
-					<ul class="fh5co-footer-links">
-						<li><a href="#">Home</a></li>
-						<li><a href="#requester">Requester</a></li>
-						<li><a href="#worker">Worker</a></li>
-						<li><a href="#aboutUs">About</a></li>
-					</ul>
-				</div>
+				<h4>Links</h4>
+				<ul class="fh5co-footer-links">
+					<li><a href="#">Home</a></li>
+					<li><a href="#requester">Dashboard</a></li>
+					<li><a href="upload-new-task.php">Upload New Task</a></li>
+					<li><a href="homepage.php">Logout</a></li>
+				</ul>
+			</div>
 
 				<div class="col-md-4" id="contact">
 					<h4>Contact Information</h4>
@@ -242,6 +242,7 @@
 	<script src="../js/jquery.countTo.js"></script>
 	<!-- Main -->
 	<script src="../js/main.js"></script>
+	<script src="../js/wallet.js"></script>
 	</body>
 	<?php
     if (isset($_SESSION['message'])) {

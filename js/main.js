@@ -302,32 +302,6 @@ function alertMessage(message) {
 	alert(message);
 }
 
-var counterWallet = 0;
-function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (counterWallet === 0) {
-			x.style.visibility = "hidden";
-			counterWallet++;
-  } else {
-			x.style.visibility = "visible";
-			counterWallet = 0;
-  }
-}
-myFunction();
-
-
-var counterWallet2 = 0;
-function myFunction2() {
-  var x = document.getElementById("myDIV2");
-  if (counterWallet2 === 0) {
-			x.style.visibility = "hidden";
-			counterWallet2++;
-  } else {
-			x.style.visibility = "visible";
-			counterWallet2 = 0;
-  }
-}
-
 function downloadResult(taskTitle) {
   window.location = "../php/download-result.php?test=" + taskTitle;
 }
@@ -477,3 +451,21 @@ function setDetails(txt) {
   document.getElementById('numberOfClasses').value = classNumber;
 }
 /////////////////////////////////////////////////////////////
+function changeColor() { //change the color + add the feature where you can press alt(or command) and click to redo the coloring
+  $('.workerQueryTitle').click(function(e) {
+		let title = e.target;
+		alert(title);
+    // console.log(e.target);
+    console.log(title.nodeName);
+    let color = '#F00';
+    $('.workerQueryTitle').css("color", '');
+    $(title).css("color", color);
+  })
+};
+
+changeColor();
+
+function fillTest(title) { //This function will determine the title that you choose.
+	document.getElementById('test').value = title;
+	// alert(title);
+}
