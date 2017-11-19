@@ -31,7 +31,7 @@
 // ///////////////////////////////////////////DEDUCT THE WALLET//////////////////////////////////
 if ($wallet < $taskBudget) {
   $_SESSION['message'] = "Insufficient Balance";
-  exit;
+  header("Location: ../html/upload-new-task.php");
 }
 $deductWallet = "UPDATE login_requester SET WALLET=WALLET-'$taskBudget' WHERE USERNAME='" . $userName . "'";
 mysqli_query($mainDb, $deductWallet);

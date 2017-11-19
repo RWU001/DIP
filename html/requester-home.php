@@ -73,6 +73,12 @@
 						</ul>
 					</div>
 				</div>
+				<div>
+ 					<?php
+ 						$wallet = $_SESSION['wallet'];
+ 						echo "<div style='float:right;font-size:14px; margin-top:10px;font-family: 'Lato', sans-serif;'><center>Your wallet is $" . $wallet . "</center></div><br>";
+  				?>
+ 			</div>
 			</div>
 		</div>
 	</nav>
@@ -110,7 +116,7 @@
 			<center>Top Up Wallet</center>
 			<form name="wallet" action="../php/wallet.php" method="post">
 				<center>Amount to top up:</center>
-				<center><input type="number" name="number" size="14" required/></center>
+				<center><input type="number" name="number" size="14" min="0" required/></center>
 				<center><input type="submit" name="wallet" value="Add Wallet" /></center>
 			</form>
 		</div>

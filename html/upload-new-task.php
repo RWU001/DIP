@@ -106,7 +106,7 @@
 									Budget: 
 								</label>
 								<div class="inputTask">
-										$<input type="number" step="0.01" id="taskBudget" name="taskBudget" required>
+										$<input type="number" step="0.01" id="taskBudget" name="taskBudget" min="0" required>
 								</div>
 
 								<br><br>
@@ -115,7 +115,7 @@
 									Reward for each question: 
 								</label>
 								<div class="inputTask">
-										$<input type="number" step="0.01" name="taskReward" id="taskReward" required>
+										$<input type="number" step="0.01" name="taskReward" id="taskReward" min="0" required>
 								</div>
 
 								<br><br>
@@ -165,7 +165,7 @@
 						<center>Top Up Wallet</center>
 						<form name="wallet" action="../php/wallet.php" method="post">
 							<center>Amount to top up:</center>
-							<center><input type="number" name="number" size="14" required/></center>
+							<center><input type="number" name="number" size="14" min="0" required/></center>
 							<center><input type="submit" name="wallet" value="Add Wallet" /></center>
 						</form>
 					</div>

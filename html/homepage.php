@@ -87,7 +87,7 @@
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
-							<li class="active"><a href="index.html">Home</a></li>
+							<li class="active"><a href="#">Home</a></li>
 							<li><a href="#requester">Requester</a></li>
 							<li><a href="#worker">Worker</a></li>
 							<li><a href="#aboutUs">About</a></li>
