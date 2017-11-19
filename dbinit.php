@@ -169,5 +169,38 @@ mysqli_query($mainDb, $finishedImage6);
 mysqli_query($mainDb, $finishedImage7);
 mysqli_query($mainDb, $finishedImage8);
 
+////////////////////////////////////////WORKER HISTORY///////////////////////////////////////
+$workerHistoryTable = "CREATE TABLE worker_history (
+    ID int NOT NULL AUTO_INCREMENT,
+    DATE_SUBMISSION varchar(255) NOT NULL,
+    NUMBER_OF_QUESTIONS INT NOT NULL,
+    REWARD_EACH_QUESTION FLOAT(5) NOT NULL,
+    USERNAME varchar(255) NOT NULL,
+    TASKTITLE varchar(255) NOT NULL,
+    PRIMARY KEY(ID),
+    FOREIGN KEY (TASKTITLE) REFERENCES requester_task(TASKTITLE)
+)";
+
+$workerHistory0 = "INSERT INTO worker_history (ID, DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
+VALUES ('', '10-11-2017', 30, 0.02, 'iamworker', 'Dog Breeds')";
+$workerHistory1 = "INSERT INTO worker_history (ID, DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
+VALUES ('', '13-11-2017', 40, 0.05, 'iamworker', 'Dog Breeds')";
+$workerHistory2 = "INSERT INTO worker_history (ID, DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
+VALUES ('', '15-11-2017', 50, 0.04, 'iamworker', 'Dog Breeds')";
+$workerHistory3 = "INSERT INTO worker_history (ID, DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
+VALUES ('', '18-12-2017', 20, 0.02, 'iamworker', 'Dog Breeds')";
+$workerHistory4 = "INSERT INTO worker_history (ID, DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
+VALUES ('', '19-1-2018', 10, 0.01, 'iamworker', 'Dog Breeds')";
+$workerHistory5 = "INSERT INTO worker_history (ID, DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
+VALUES ('', '21-2-2018', 5, 1.00, 'iamworker', 'Dog Breeds')";
+
+mysqli_query($mainDb, $workerHistoryTable);
+mysqli_query($mainDb, $workerHistory0);
+mysqli_query($mainDb, $workerHistory1);
+mysqli_query($mainDb, $workerHistory2);
+mysqli_query($mainDb, $workerHistory3);
+mysqli_query($mainDb, $workerHistory4);
+mysqli_query($mainDb, $workerHistory5);
+
 echo "Database Created";
 ?>

@@ -67,6 +67,7 @@
 						<ul>
 							<li class="active"><a href="homepage.php">Home</a></li>
 							<li><a href="../php/queryTaskWorker.php">Dashboard</a></li>
+							<li><a href="../php/query-worker-history.php">Record</a></li>
 							<li><a href="homepage.php">Logout</a></li>
 						</ul>
 					</div>
@@ -106,7 +107,7 @@
             ?>
             </h3>
             <a href="history.html">
-              <h4>View answered history</h4>
+              <h4><a href="../php/query-worker-history.php">View answered history</a></h4>
             </a>
             <br>
 
@@ -144,6 +145,7 @@
 					<ul class="fh5co-footer-links">
 						<li><a href="#">Home</a></li>
 						<li><a href="#page">Dashboard</a></li>
+						<li><a href="../php/query-worker-history.php">Record</a></li>
 						<li><a href="homepage.php">Logout</a></li>
 					</ul>
 				</div>

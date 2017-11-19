@@ -73,12 +73,6 @@
 						</ul>
 					</div>
 				</div>
-				<div>
-					<?php
-						$wallet = $_SESSION['wallet'];
-						echo "<div style='float:right;font-size:14px; margin-top:10px;font-family: 'Lato', sans-serif;'><center>Your wallet is $" . $wallet . "</center></div><br>";
-					?>
-				</div>
 			</div>
 		</div>
 	</nav>
