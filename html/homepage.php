@@ -52,7 +52,7 @@
 
 	</head>
 	<body>
-			<div id="boxRequester" class="popupbox">
+			<div id="boxRequester" class="popupbox" style="background-color: #D3D3D3;">
 					<center>HI Requester!</center>
 					<form name="login" action="../php/login-requester.php" method="post">
 						<center>Username:</center>
@@ -64,7 +64,7 @@
 						<center><input type="submit" name="register" value="Sign Up" /></center>
 					</form>
 				</div> 
-		<div id="boxWorker" class="popupbox">
+		<div id="boxWorker" class="popupbox" style="background-color: #D3D3D3;">
 			<center>HI Worker!</center>
 			<form name="login" action="../php/login-worker.php" method="post">
 				<center>Username:</center>
@@ -111,7 +111,7 @@
 				   				<div class="slider-text-inner">
 				   					<h1>Money can't buy happiness</h1>
 										<h2>but money can make your life easier<br>Join us today as a <b style="color:#66D37E">requester</b></h2>
-										<p><a class="btn btn-primary btn-demo" onclick="loginRequester('show')"></i> Login</a> <a class="btn btn-primary btn-learn" href="#requester">Learn More</a></p>
+										<p><a class="btn btn-primary btn-demo" onclick="loginRequester('show')" href="#boxRequester"></i> Login</a> <a class="btn btn-primary btn-learn" href="#requester">Learn More</a></p>
 				   				</div>
 				   			</div>
 				   		</div>
@@ -125,7 +125,7 @@
 				   				<div class="slider-text-inner">
 				   					<h1>Start earning money from where you are</h1>
 										<h2>Start earning money from where you are<br>Join us today as a <b style="color:#66D37E">worker</b></a></h2>
-										<p><a class="btn btn-primary btn-demo" onclick="loginWorker('show')"></i> Login</a> <a class="btn btn-primary btn-learn" href="#worker">Learn More</a></p>
+										<p><a class="btn btn-primary btn-demo" onclick="loginWorker('show')" href="#boxWorker"></i> Login</a> <a class="btn btn-primary btn-learn" href="#worker">Learn More</a></p>
 				   				</div>
 				   			</div>
 				   		</div>
@@ -190,7 +190,7 @@
 			<div class="row animate-box">
 				<div class="col-md-10 col-md-offset-1 fh5co-heading" style="font-size:16px;">
 					<h2 style="font-size:30px;" class="text-center">As a Requester</h2>
-					<p>There are tons of people who want to earn money from their home but due to lack of accessibility of the current working environment, it become dreams for them. I am inviting you to make their dreams come true and help them financially by becoming a requester.</p>
+					<p>There are tons of people who want to earn money from their home but due to lack of accessibility of the current working environment, it become dreams for them. I am inviting you to make their dreams come true and help them financially by joining us as a requester.</p>
 					<ul>
 						<li>Prepare your task images and compress all the images to a zip file.</li>
 						<li>Define all possible classes with their corresponding features that you desired for worker to work on</li>
@@ -314,8 +314,8 @@
 					</p>
 					<p>
 						<ul class="fh5co-social-icons">
-							<li><a href="https://www.facebook.com/NTUsg/"><i style="font-size:40px;" class="icon-facebook"></i></a></li>
-							<li><a href="https://github.com/RWU001/DIP"><i style="font-size:40px;" class="icon-github" stlye="font-size:40px"></i></a></li>
+							<li><a href="https://www.facebook.com/NTUsg/" target="_blank"><i style="font-size:40px;" class="icon-facebook"></i></a></li>
+							<li><a href="https://github.com/RWU001/DIP" target="_blank"><i style="font-size:40px;" class="icon-github" stlye="font-size:40px"></i></a></li>
 						</ul>
 					</p>
 				</div>

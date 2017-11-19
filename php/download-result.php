@@ -42,7 +42,7 @@
       header('Pragma: public');
       header('Content-Length: ' . filesize($directory));
       readfile($directory);
-      $target_dir = "/opt/lampp/htdocs/DIPWebsite/dashboard/develop/temp/" . $taskTitle . ".csv";
+      $target_dir = "/opt/lampp/htdocs/DIPWebsite/dashboard/new-design/temp/" . $taskTitle . ".csv";
       deleteDirectory($target_dir);
       exit;
   }

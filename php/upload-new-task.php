@@ -12,15 +12,15 @@
   $userName = $_SESSION['username'];
   $wallet = $_SESSION['wallet'];
 
-  /////////////////////////DIRECTORY////////////////////////////////////////  
-  $directory = "/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/". $userName . "/"; //Change to your own directory
+//   /////////////////////////DIRECTORY////////////////////////////////////////  
+  $directory = "/opt/lampp/htdocs/DIPWebsite/dashboard/new-design/taskfiles/". $userName . "/"; //Change to your own directory
   if (!file_exists($directory)) {
     $oldmask = umask(0);
     mkdir($directory, 0777); //0777 so everyone will have permission to open it also can delete the folder
     umask($oldmask);
   }
   
-  $directory .= $taskTitle . "/"; //Change to your own directory
+  $directory .= $taskTitle . "/";
   if (!file_exists($directory)) {
     $oldmask = umask(0);
     mkdir($directory, 0777); //0777 so everyone will have permission to open it also can delete the folder
@@ -28,14 +28,14 @@
   }
 
 
-///////////////////////////////////////////DEDUCT THE WALLET//////////////////////////////////
+// ///////////////////////////////////////////DEDUCT THE WALLET//////////////////////////////////
 if ($wallet < $taskBudget) {
-  $_SESSION['errorMessage'] = "Insufficient Balance";
-  header("Location: error-message.php");
+  $_SESSION['message'] = "Insufficient Balance";
   exit;
 }
 $deductWallet = "UPDATE login_requester SET WALLET=WALLET-'$taskBudget' WHERE USERNAME='" . $userName . "'";
 mysqli_query($mainDb, $deductWallet);
+$_SESSION['wallet'] -= $taskBudget;
 
 
 /////////////////////////////////////////////EXTRACT THE ZIP FILE////////////////////////////////////////////
@@ -48,9 +48,9 @@ if($_FILES["zip_file"]["name"]) {
 	$type = $_FILES["zip_file"]["type"];
 
 	// $your_own_path = "/opt/lampp/htdocs/DIPWebsite/dashboard/upload-file/DIP/zip-files/"; //Change this to your own directory folder. This folder path will be a folder which contain lots of taskfolders(each task will have one folder)
-	$your_own_path = $directory;
-	if (substr($type,-3) == 'zip') { //IF THE FILE IS NOT ZIP FILE
-		$name = explode(".", $filename);
+  $your_own_path = $directory;
+  $name = explode(".", $filename);
+	if ($name[1] == 'zip') { //IF THE FILE IS NOT ZIP FILE
 		$accepted_types = array('application/zip', 'application/x-zip-compressed', 'multipart/x-zip', 'application/x-compressed');
 		foreach($accepted_types as $mime_type) {
 			if($mime_type == $type) {
@@ -92,7 +92,8 @@ if($_FILES["zip_file"]["name"]) {
 		}
 		if($message) echo "<p>$message</p>"; 
 	} else {
-		echo "THE FILE IS NOT A ZIP FILE";
+    $_SESSION['message'] = "THE FILE IS NOT A ZIP FILE";
+    header("Location: ../html/upload-new-task.php");
 	}
 }
 
@@ -140,8 +141,8 @@ if($_FILES["zip_file"]["name"]) {
 
 
 ////////////////////////////////////////////QUERY A NEW TASK//////////////////////////////
-$sqlQuery = "INSERT INTO requester_task (ID, USER, TASKTITLE, COMPLETION_OF_TASK, PAYMENT_PROCESS, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES ('', '$userName', '$taskTitle', '&#x2714', 'HAHAHAA', '$taskReward', '$taskBudget', '$your_own_path', '$notepad_file', '$taskDescription')";
+$sqlQuery = "INSERT INTO requester_task (ID, USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+VALUES ('', '$userName', '$taskTitle', '$taskReward', '$taskBudget', '$your_own_path', '$notepad_file', '$taskDescription')";
 $result3 = mysqli_query($mainDb, $sqlQuery);
 
 ///////////////////////////////////////////////QUERT THE IMAGES name and path to database//////////////////////////////////
@@ -151,8 +152,9 @@ $files1 = scandir($imagePath);
 echo "<br><br><br>";
   foreach($files1 as $picsName) {
     if ($picsName[0] != ".") {
+      $src = "<img src=\"$directorySrc$picsName\" style=\"width:300px;\" id=\"shownPicture\">";
       $image = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-      VALUES ('', '$picsName', '$directorySrc" . "$picsName', '$taskTitle', '$userName')";
+      VALUES ('', '$picsName', '$src', '$taskTitle', '$userName')";
       mysqli_query($mainDb, $image);
     } 
   }

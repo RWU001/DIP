@@ -945,10 +945,6 @@ h1, h2, h3, h4, h5, h6, figure {
   border: 2px solid rgba(0, 0, 0, 0.8);
 }
 
-input[type="text"] {
-  height: 50px;
-}
-
 .form-group {
   margin-bottom: 30px;
 }
@@ -1505,5 +1501,96 @@ input[type="text"] {
   color: rgba(0, 0, 0, 0.3);
   font-weight: 400;
 }
-
 /*# sourceMappingURL=style.css.map */
+
+
+.upload-new-task:hover {
+  cursor: pointer;
+}
+
+.taskQuestion {
+	width: 100%;
+}
+
+.inputTask {
+	float: right;
+	margin-right: 10%;
+}
+
+#taskDescription {
+	float: right;
+	width: 90%;
+	height: 100px;
+	margin-right: 10%;
+	margin-top: 2%;
+	text-align: top;
+}
+
+/* CHANGE PLACEHOLDER COLOR */
+::-webkit-input-placeholder { /* WebKit browsers */
+  color:    #BBB;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #BBB;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #BBB;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:    #BBB;
+}
+
+#detailClass {
+  table-layout: fixed;
+  font-weight: bold;
+}
+
+td {
+  padding: 10px;
+}
+
+.table-header {
+  font-size:20px;
+  font-weight: bold;
+
+}
+
+#taskDescription {
+  border: 2px solid #CCCCCC !important;
+}
+
+#myDIV {
+  margin: 0; 
+	margin-left: 40%; 
+	margin-right: 40%;
+	margin-top: 10px; 
+  padding-top: 10px; 
+  top: -160px;
+	width: 200px; 
+	height: 150px; 
+	position: absolute; 
+	background: #FBFBF0; 
+	border: solid #000000 2px; 
+	z-index: 9; 
+	visibility: hidden;
+}
+
+#myDIV2 {
+  margin: 0;
+	margin-top: 10%; 
+  padding-top: 10px;
+  margin-left: 28%;
+  top: 0px;
+	width: 200px; 
+	height: 150px; 
+	position: absolute; 
+	background: #FBFBF0; 
+	border: solid #000000 2px; 
+	z-index: 9; 
+	visibility: hidden;
+}
+
+#topUpWalletHead:hover {
+  cursor: pointer;
+}
+
