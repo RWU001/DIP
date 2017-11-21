@@ -454,7 +454,6 @@ function setDetails(txt) {
 function changeColor() { //change the color + add the feature where you can press alt(or command) and click to redo the coloring
   $('.workerQueryTitle').click(function(e) {
 		let title = e.target;
-		alert(title);
     // console.log(e.target);
     console.log(title.nodeName);
     let color = '#F00';
