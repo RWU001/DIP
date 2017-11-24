@@ -247,7 +247,8 @@
 	<?php
     if (isset($_SESSION['message'])) {
       $message = $_SESSION['message'];
-      echo "<script>alertMessage('$message');</script>";
+			echo "<script>alertMessage('$message');</script>";
+			$_SESSION['message'] = NULL;
     }
   ?>
 </html>

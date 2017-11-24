@@ -52,18 +52,18 @@ $tableRequesterTask = "CREATE TABLE requester_task (
     UNIQUE (TASKTITLE)
 )";
 
-$sql1 = "INSERT INTO requester_task (ID, USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES ('', 'heiho', 'DOnkey', 0.05, 200, 'ha', 'hi', 'test')";
-$sql2 = "INSERT INTO requester_task (ID, USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES ('', 'heiho', 'Birds', 0.04, 700, 'ha1', 'hi8', 'test')";
-$sql3 = "INSERT INTO requester_task (ID, USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES ('', 'Donny', 'Cats', 0.03, 600, 'ha2', 'hi7', 'test')";
-$sql4 = "INSERT INTO requester_task (ID, USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES ('', 'alfred', 'Dogs', 0.02, 300, 'ha3', 'hi6', 'test')";
-$sql5 = "INSERT INTO requester_task (ID, USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES ('', 'benny', 'Seal', 0.01, 100, 'ha4', 'hi5', 'test')";
-$sql6 = "INSERT INTO requester_task (ID, USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES ('', 'heiho', 'Dog Breeds', 0.01, 100, '/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/heiho/Dog Breeds/images/', '/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/heiho/Dog Breeds/Dog Breeds.txt', 'This task goal is to differentiate the dog breed according to features that you will be asked. Please answer it with 100% accuracy as the question will be simple.')";
+$sql1 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+VALUES (heiho', 'DOnkey', 0.05, 200, 'ha', 'hi', 'test')";
+$sql2 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+VALUES (heiho', 'Birds', 0.04, 700, 'ha1', 'hi8', 'test')";
+$sql3 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+VALUES (Donny', 'Cats', 0.03, 600, 'ha2', 'hi7', 'test')";
+$sql4 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+VALUES (alfred', 'Dogs', 0.02, 300, 'ha3', 'hi6', 'test')";
+$sql5 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+VALUES (benny', 'Seal', 0.01, 100, 'ha4', 'hi5', 'test')";
+$sql6 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+VALUES (heiho', 'Dog Breeds', 0.01, 100, '/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/heiho/Dog Breeds/images/', '/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/heiho/Dog Breeds/Dog Breeds.txt', 'This task goal is to differentiate the dog breed according to features that you will be asked. Please answer it with 100% accuracy as the question will be simple.')";
 
 mysqli_query($mainDb, $tableRequesterTask);
 mysqli_query($mainDb, $sql1);
@@ -98,26 +98,26 @@ $src6 = "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog555.png\" style=\"wi
 $src7 = "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog666.jpg\" style=\"width:300px;\" id=\"shownPicture\">";
 $src8 = "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog777.jpg\" style=\"width:300px;\" id=\"shownPicture\">";
 $src9 = "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog888?.png\" style=\"width:300px;\" id=\"shownPicture\">";
-$image0 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'testing', '$src0', 'DOnkey', 'heiho')";
-$image1 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'testing', '$src1', 'Birds', 'heiho')";
-$image2 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'Dog111.jpeg', '$src2', 'Dog Breeds', 'heiho')";
-$image3 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'Dog222.jpg', '$src3', 'Dog Breeds', 'heiho')";
-$image4 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'Dog333.jpeg', '$src4', 'Dog Breeds', 'heiho')";
-$image5 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'Dog444.jpg', '$src5', 'Dog Breeds', 'heiho')";
-$image6 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'Dog555.png', '$src6', 'Dog Breeds', 'heiho')";
-$image7 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'Dog666.jpg', '$src7', 'Dog Breeds', 'heiho')";
-$image8 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'Dog777.jpg', '$src8', 'Dog Breeds', 'heiho')";
-$image9 = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('', 'Dog888?.png', '$src9', 'Dog Breeds', 'heiho')";
+$image0 = "INSERT INTO images_library (IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
+VALUES ('testing', '$src0', 'DOnkey', 'heiho')";
+$image1 = "INSERT INTO images_library (IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
+VALUES ('testing', '$src1', 'Birds', 'heiho')";
+$image2 = "INSERT INTO images_library (IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
+VALUES ('Dog111.jpeg', '$src2', 'Dog Breeds', 'heiho')";
+$image3 = "INSERT INTO images_library (IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
+VALUES ('Dog222.jpg', '$src3', 'Dog Breeds', 'heiho')";
+$image4 = "INSERT INTO images_library (IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
+VALUES ('Dog333.jpeg', '$src4', 'Dog Breeds', 'heiho')";
+$image5 = "INSERT INTO images_library (IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
+VALUES ('Dog444.jpg', '$src5', 'Dog Breeds', 'heiho')";
+$image6 = "INSERT INTO images_library (IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
+VALUES ('Dog555.png', '$src6', 'Dog Breeds', 'heiho')";
+$image7 = "INSERT INTO images_library (IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
+VALUES ('Dog666.jpg', '$src7', 'Dog Breeds', 'heiho')";
+$image8 = "INSERT INTO images_library (IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
+VALUES ('Dog777.jpg', '$src8', 'Dog Breeds', 'heiho')";
+$image9 = "INSERT INTO images_library (IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
+VALUES ('Dog888?.png', '$src9', 'Dog Breeds', 'heiho')";
 
 mysqli_query($mainDb, $tableImages);
 mysqli_query($mainDb, $image0);
@@ -142,22 +142,22 @@ $tableFinishedImages = "CREATE TABLE finished_images (
     FOREIGN KEY (TASKTITLE) REFERENCES requester_task(TASKTITLE)
 )";
 
-$finishedImage1 = "INSERT INTO finished_images (ID, IMAGE_NAME, TASKTITLE, ANSWER)
-VALUES ('', 'Dog111.jpeg', 'Dog Breeds', 'Australian Terrier Azawakh')";
-$finishedImage2 = "INSERT INTO finished_images (ID, IMAGE_NAME, TASKTITLE, ANSWER)
-VALUES ('', 'Dog222.jpeg', 'Dog Breeds', 'Beagle')";
-$finishedImage3 = "INSERT INTO finished_images (ID, IMAGE_NAME, TASKTITLE, ANSWER)
-VALUES ('', 'Dog333.jpeg', 'Dog Breeds', 'Appenzeller Sennenhunde')";
-$finishedImage4 = "INSERT INTO finished_images (ID, IMAGE_NAME, TASKTITLE, ANSWER)
-VALUES ('', 'Dog444.jpeg', 'Dog Breeds', 'Australian Terrier Azawakh')";
-$finishedImage5 = "INSERT INTO finished_images (ID, IMAGE_NAME, TASKTITLE, ANSWER)
-VALUES ('', 'Dog555.jpeg', 'Dog Breeds', 'Beagle')";
-$finishedImage6 = "INSERT INTO finished_images (ID, IMAGE_NAME, TASKTITLE, ANSWER)
-VALUES ('', 'Dog666.jpeg', 'Dog Breeds', 'Appenzeller Sennenhunde')";
-$finishedImage7 = "INSERT INTO finished_images (ID, IMAGE_NAME, TASKTITLE, ANSWER)
-VALUES ('', 'Dog777.jpeg', 'Dog Breeds', 'Bloodhound')";
-$finishedImage8 = "INSERT INTO finished_images (ID, IMAGE_NAME, TASKTITLE, ANSWER)
-VALUES ('', 'Dog888?.jpeg', 'Dog Breeds', 'Bloodhound')";
+$finishedImage1 = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
+VALUES ('Dog111.jpeg', 'Dog Breeds', 'Australian Terrier Azawakh')";
+$finishedImage2 = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
+VALUES ('Dog222.jpeg', 'Dog Breeds', 'Beagle')";
+$finishedImage3 = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
+VALUES ('Dog333.jpeg', 'Dog Breeds', 'Appenzeller Sennenhunde')";
+$finishedImage4 = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
+VALUES ('Dog444.jpeg', 'Dog Breeds', 'Australian Terrier Azawakh')";
+$finishedImage5 = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
+VALUES ('Dog555.jpeg', 'Dog Breeds', 'Beagle')";
+$finishedImage6 = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
+VALUES ('Dog666.jpeg', 'Dog Breeds', 'Appenzeller Sennenhunde')";
+$finishedImage7 = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
+VALUES ('Dog777.jpeg', 'Dog Breeds', 'Bloodhound')";
+$finishedImage8 = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
+VALUES ('Dog888?.jpeg', 'Dog Breeds', 'Bloodhound')";
 
 mysqli_query($mainDb, $tableFinishedImages);
 mysqli_query($mainDb, $finishedImage1);
@@ -181,18 +181,18 @@ $workerHistoryTable = "CREATE TABLE worker_history (
     FOREIGN KEY (TASKTITLE) REFERENCES requester_task(TASKTITLE)
 )";
 
-$workerHistory0 = "INSERT INTO worker_history (ID, DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
-VALUES ('', '10-11-2017', 30, 0.02, 'iamworker', 'Dog Breeds')";
-$workerHistory1 = "INSERT INTO worker_history (ID, DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
-VALUES ('', '13-11-2017', 40, 0.05, 'iamworker', 'Dog Breeds')";
-$workerHistory2 = "INSERT INTO worker_history (ID, DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
-VALUES ('', '15-11-2017', 50, 0.04, 'iamworker', 'Dog Breeds')";
-$workerHistory3 = "INSERT INTO worker_history (ID, DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
-VALUES ('', '18-12-2017', 20, 0.02, 'iamworker', 'Dog Breeds')";
-$workerHistory4 = "INSERT INTO worker_history (ID, DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
-VALUES ('', '19-1-2018', 10, 0.01, 'iamworker', 'Dog Breeds')";
-$workerHistory5 = "INSERT INTO worker_history (ID, DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
-VALUES ('', '21-2-2018', 5, 1.00, 'iamworker', 'Dog Breeds')";
+$workerHistory0 = "INSERT INTO worker_history (DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
+VALUES ('10-11-2017', 30, 0.02, 'iamworker', 'Dog Breeds')";
+$workerHistory1 = "INSERT INTO worker_history (DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
+VALUES ('13-11-2017', 40, 0.05, 'iamworker', 'Dog Breeds')";
+$workerHistory2 = "INSERT INTO worker_history (DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
+VALUES ('15-11-2017', 50, 0.04, 'iamworker', 'Dog Breeds')";
+$workerHistory3 = "INSERT INTO worker_history (DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
+VALUES ('18-12-2017', 20, 0.02, 'iamworker', 'Dog Breeds')";
+$workerHistory4 = "INSERT INTO worker_history (DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
+VALUES ('19-1-2018', 10, 0.01, 'iamworker', 'Dog Breeds')";
+$workerHistory5 = "INSERT INTO worker_history (DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
+VALUES ('21-2-2018', 5, 1.00, 'iamworker', 'Dog Breeds')";
 
 mysqli_query($mainDb, $workerHistoryTable);
 mysqli_query($mainDb, $workerHistory0);
