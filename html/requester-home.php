@@ -96,7 +96,7 @@
 					<tr style="padding:20px; background-color:#66d37e; color:#d9534f">
 					<th style="padding:20px"><center>TASK TITLE</center></th>
 					<th><center>COMPLETION OF TASK</center></th>
-					<th><center>PAYMENT PROCESS</center></th>
+					<th><center>TASK PROGRESS</center></th>
 					<th><center>RESULT</center></th>
 					</tr>
 					

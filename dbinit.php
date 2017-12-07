@@ -52,25 +52,25 @@ $tableRequesterTask = "CREATE TABLE requester_task (
     UNIQUE (TASKTITLE)
 )";
 
-$sql1 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES (heiho', 'DOnkey', 0.05, 200, 'ha', 'hi', 'test')";
-$sql2 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES (heiho', 'Birds', 0.04, 700, 'ha1', 'hi8', 'test')";
-$sql3 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES (Donny', 'Cats', 0.03, 600, 'ha2', 'hi7', 'test')";
-$sql4 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES (alfred', 'Dogs', 0.02, 300, 'ha3', 'hi6', 'test')";
-$sql5 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES (benny', 'Seal', 0.01, 100, 'ha4', 'hi5', 'test')";
+// $sql1 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+// VALUES ('heiho', 'DOnkey', 0.05, 200, 'ha', 'hi', 'test')";
+// $sql2 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+// VALUES ('heiho', 'Birds', 0.04, 700, 'ha1', 'hi8', 'test')";
+// $sql3 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+// VALUES ('Donny', 'Cats', 0.03, 600, 'ha2', 'hi7', 'test')";
+// $sql4 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+// VALUES ('alfred', 'Dogs', 0.02, 300, 'ha3', 'hi6', 'test')";
+// $sql5 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+// VALUES ('benny', 'Seal', 0.01, 100, 'ha4', 'hi5', 'test')";
 $sql6 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES (heiho', 'Dog Breeds', 0.01, 100, '/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/heiho/Dog Breeds/images/', '/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/heiho/Dog Breeds/Dog Breeds.txt', 'This task goal is to differentiate the dog breed according to features that you will be asked. Please answer it with 100% accuracy as the question will be simple.')";
+VALUES ('heiho', 'Dog Breeds', 0.01, 100, '/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/heiho/Dog Breeds/images/', '/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/heiho/Dog Breeds/Dog Breeds.txt', 'This task goal is to differentiate the dog breed according to features that you will be asked. Please answer it with 100% accuracy as the question will be simple.')";
 
 mysqli_query($mainDb, $tableRequesterTask);
-mysqli_query($mainDb, $sql1);
-mysqli_query($mainDb, $sql2);
-mysqli_query($mainDb, $sql3);
-mysqli_query($mainDb, $sql4);
-mysqli_query($mainDb, $sql5);
+// mysqli_query($mainDb, $sql1);
+// mysqli_query($mainDb, $sql2);
+// mysqli_query($mainDb, $sql3);
+// mysqli_query($mainDb, $sql4);
+// mysqli_query($mainDb, $sql5);
 mysqli_query($mainDb, $sql6);
 
 

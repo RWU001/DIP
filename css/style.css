@@ -36,14 +36,29 @@ body {
 	margin-right: 40%;
 	margin-top: 50px; 
 	padding-top: 10px; 
-	width: 20%; 
-	height: 200px; 
+  width: 20%;
+  padding-bottom: 20px;
 	position: absolute; 
 	background: #FBFBF0; 
 	border: solid #000000 2px; 
 	z-index: 9; 
 	font-family: arial;
 	visibility: hidden;
+}
+
+@media screen and (max-width: 685px) {
+  .popupbox {
+    margin: 0;
+    padding-top: 10px; 
+    width: 100%;
+    padding-bottom: 20px;
+    position: absolute;
+    background: #FBFBF0; 
+    border: solid #000000 2px; 
+    z-index: 9; 
+    font-family: arial;
+    visibility: hidden;
+  }
 }
 
 #page {
