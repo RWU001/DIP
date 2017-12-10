@@ -367,14 +367,11 @@ function createListClass() {
 
 function helpButton() {
   alert(`This upload txt file button allows you to uplaod a txt file and will automatically fill the form below with structure like:
-    -(name of class ex.Dog)
-    (feature1 Dogs)
-    (feature2 Dogs)
-    (feature2 Dogs)
-    -(name of another class ex.Cat)
-    (feature1 Cat)
-    (feature2 Cat)
-    (feature2 Cat)
+    (name of class ex.Dog)
+    (name of another class ex.Cat)
+    (name of another class ex.Bird)
+    (name of another class ex.Car)
+    (name of another class ex.Motor)
   NOTE THAT number of features for every class must be equal
   `);
 }
