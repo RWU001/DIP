@@ -111,7 +111,8 @@
             </a>
             <br>
 
-					<form name="workplace" action="../php/workplace.php" method="post">
+					<!-- <form name="workplace" action="../php/workplace.php" method="post"> -->
+					<form name="workplace" action="../php/question-generator.php" method="post">
 						<div class="taskListBox" style="margin-bottom: 25px;">
 							<h2 class="taskListTitle" style="background-color:#66d37e; color:#d9534f">Task List</h2>
 							<div id="taskList">
@@ -200,5 +201,13 @@
 	<!-- Main -->
 	<script src="../js/main.js"></script>
 	</body>
+	<?php
+	if (isset($_SESSION['message'])) {
+		$message = $_SESSION['message'];
+		echo "<script>alertMessage('$message');</script>";
+	}
+	
+	unset($_SESSION['message']);
+	?>
 </html>
 

@@ -45,6 +45,7 @@ $tableRequesterTask = "CREATE TABLE requester_task (
     TASKTITLE varchar(255) NOT NULL,
     PRICE_PER_QUESTION FLOAT(5) NOT NULL,
     BUDGET int NOT NULL,
+    COMPLETE varchar(255) NOT NULL,
     IMAGE_PATH varchar(255) NOT NULL,
     TXT_PATH varchar(255) NOT NULL,
     TASK_DESCRIPTION varchar(400) NOT NULL,
@@ -62,8 +63,8 @@ $tableRequesterTask = "CREATE TABLE requester_task (
 // VALUES ('alfred', 'Dogs', 0.02, 300, 'ha3', 'hi6', 'test')";
 // $sql5 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
 // VALUES ('benny', 'Seal', 0.01, 100, 'ha4', 'hi5', 'test')";
-$sql6 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-VALUES ('heiho', 'Dog Breeds', 0.01, 100, '/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/heiho/Dog Breeds/images/', '/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/heiho/Dog Breeds/Dog Breeds.txt', 'This task goal is to differentiate the dog breed according to features that you will be asked. Please answer it with 100% accuracy as the question will be simple.')";
+$sql6 = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, COMPLETE, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+VALUES ('heiho', 'Dog Breeds', 0.01, 100, 'YES', '/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/heiho/Dog Breeds/images/', '/opt/lampp/htdocs/DIPWebsite/dashboard/develop/taskfiles/heiho/Dog Breeds/Dog Breeds.txt', 'This task goal is to differentiate the dog breed according to features that you will be asked. Please answer it with 100% accuracy as the question will be simple.')";
 
 mysqli_query($mainDb, $tableRequesterTask);
 // mysqli_query($mainDb, $sql1);
@@ -117,7 +118,7 @@ VALUES ('Dog666.jpg', '$src7', 'Dog Breeds', 'heiho')";
 $image8 = "INSERT INTO images_library (IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
 VALUES ('Dog777.jpg', '$src8', 'Dog Breeds', 'heiho')";
 $image9 = "INSERT INTO images_library (IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-VALUES ('Dog888?.png', '$src9', 'Dog Breeds', 'heiho')";
+VALUES ('Dog888.jpg', '$src9', 'Dog Breeds', 'heiho')";
 
 mysqli_query($mainDb, $tableImages);
 mysqli_query($mainDb, $image0);
@@ -145,19 +146,19 @@ $tableFinishedImages = "CREATE TABLE finished_images (
 $finishedImage1 = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
 VALUES ('Dog111.jpeg', 'Dog Breeds', 'Australian Terrier Azawakh')";
 $finishedImage2 = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
-VALUES ('Dog222.jpeg', 'Dog Breeds', 'Beagle')";
+VALUES ('Dog222.jpg', 'Dog Breeds', 'Beagle')";
 $finishedImage3 = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
 VALUES ('Dog333.jpeg', 'Dog Breeds', 'Appenzeller Sennenhunde')";
 $finishedImage4 = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
-VALUES ('Dog444.jpeg', 'Dog Breeds', 'Australian Terrier Azawakh')";
+VALUES ('Dog444.jpg', 'Dog Breeds', 'Australian Terrier Azawakh')";
 $finishedImage5 = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
-VALUES ('Dog555.jpeg', 'Dog Breeds', 'Beagle')";
+VALUES ('Dog555.png', 'Dog Breeds', 'Beagle')";
 $finishedImage6 = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
-VALUES ('Dog666.jpeg', 'Dog Breeds', 'Appenzeller Sennenhunde')";
+VALUES ('Dog666.jpg', 'Dog Breeds', 'Appenzeller Sennenhunde')";
 $finishedImage7 = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
-VALUES ('Dog777.jpeg', 'Dog Breeds', 'Bloodhound')";
+VALUES ('Dog777.jpg', 'Dog Breeds', 'Bloodhound')";
 $finishedImage8 = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
-VALUES ('Dog888?.jpeg', 'Dog Breeds', 'Bloodhound')";
+VALUES ('Dog888.jpg', 'Dog Breeds', 'Bloodhound')";
 
 mysqli_query($mainDb, $tableFinishedImages);
 mysqli_query($mainDb, $finishedImage1);
@@ -201,6 +202,12 @@ mysqli_query($mainDb, $workerHistory2);
 mysqli_query($mainDb, $workerHistory3);
 mysqli_query($mainDb, $workerHistory4);
 mysqli_query($mainDb, $workerHistory5);
+
+
+$questionsTable = "CREATE TABLE `questions` ( `ID` INT(10) NOT NULL AUTO_INCREMENT , `option1` VARCHAR(255) NOT NULL , `option2` VARCHAR(255) NOT NULL , `TASKTITLE` VARCHAR(255) NOT NULL,`IMAGE_NAME` VARCHAR(255) NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;";
+
+mysqli_query($mainDb, $questionsTable);
+
 
 echo "Database Created";
 ?>

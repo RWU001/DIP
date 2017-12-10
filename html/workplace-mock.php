@@ -81,24 +81,20 @@
 			<div class="row animate-box">
 				<div class="col-md-12 fh5co-heading" style="font-size:16px;">
 					<h2 style="font-size:30px;" class="text-center">
-            Work Page<span style:"float:right">Number of task : <?php echo $_SESSION['currentQuestion']; ?>/<?php echo $_SESSION['numberQuestion']; ?></span>
+            Work Page : <?php echo $_SESSION['taskTitle'];?><span style:"float:right">Number of task : <?php echo $_SESSION['currentQuestion']; ?>/<?php echo $_SESSION['numberQuestion']; ?></span>
           </h2>
 					<hr style="margin-bottom: 30px;">
 					<form enctype="multipart/form-data" method="post" action="../php/workplace.php">
 						<div class="col-md-6">
-							<?php echo $_SESSION['imagesShown']; ?>
+							<?php echo $_SESSION['imagePath']; ?>
 						</div>
 						
 						<div class="col-md-6" style="padding:0;">
 							<div style="margin-left:100px;">
 								<p id="rejectButton">Reject Task : <button>Reject</button> </p>
-								<ol>
-								<li class="eachQuestion">
-									<p>Is the picture have <strong>long ears</strong> ?</p>
-									<input type="radio" name="question1" value="yes">True<br>
-									<input type="radio" name="question1" value="no">False
-								</li>
-								</ol>
+									<p><?php echo $_SESSION['currentQuestion']; ?>. Which category this image belong to?</p>
+									<input type="radio" name="question1" value="0"><?php echo $_SESSION['option1'];?><br>
+									<input type="radio" name="question1" value="1"><?php echo $_SESSION['option2'];?>
 								<br>
 								<div id="submitButton">
 									<button type="submit" class="btn btn-primary">Submit</button>

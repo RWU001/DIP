@@ -122,7 +122,7 @@ if ($wallet < $taskBudget) {
     $classNumber = (int)$_POST['classNumber'];
     // $featureNumber = (int)$_POST['featureNumber'];
     
-    for ($class = 0; $class < $classNumber; $class++) {
+    for ($class = 0; $class < $classNumber - 1; $class++) {
       // $classdata = '-'.$_POST['class' . $class] . "\n";
       $classdata = $_POST['class' . $class] . "\n";
       fwrite($handle, $classdata);
@@ -138,6 +138,8 @@ if ($wallet < $taskBudget) {
       //   echo $featuredata;
       // }
     }
+    $classdata = $_POST['class' . ($classNumber - 1)] . "\n";
+    fwrite($handle, $classdata);
     fclose($handle); //close the notepad
   
     chmod($notepad_file, 0777);
@@ -147,8 +149,8 @@ if ($wallet < $taskBudget) {
   
   
   ////////////////////////////////////////////QUERY A NEW TASK//////////////////////////////
-  $sqlQuery = "INSERT INTO requester_task (ID, USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
-  VALUES ('', '$userName', '$taskTitle', '$taskReward', '$taskBudget', '$your_own_path', '$notepad_file', '$taskDescription')";
+  $sqlQuery = "INSERT INTO requester_task (USER, TASKTITLE, PRICE_PER_QUESTION, BUDGET, IMAGE_PATH, TXT_PATH, TASK_DESCRIPTION)
+  VALUES ('$userName', '$taskTitle', '$taskReward', '$taskBudget', '$your_own_path', '$notepad_file', '$taskDescription')";
   $result3 = mysqli_query($mainDb, $sqlQuery);
   
   ///////////////////////////////////////////////QUERT THE IMAGES name and path to database//////////////////////////////////
@@ -159,8 +161,8 @@ if ($wallet < $taskBudget) {
     foreach($files1 as $picsName) {
       if ($picsName[0] != ".") {
         $src = "<img src=\"$directorySrc$picsName\" style=\"width:300px;\" id=\"shownPicture\">";
-        $image = "INSERT INTO images_library (ID, IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
-        VALUES ('', '$picsName', '$src', '$taskTitle', '$userName')";
+        $image = "INSERT INTO images_library (IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
+        VALUES ('$picsName', '$src', '$taskTitle', '$userName')";
         mysqli_query($mainDb, $image);
       } 
     }

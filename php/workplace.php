@@ -2,27 +2,59 @@
   session_start();
   require('connect.php'); //connection to DB
   $mainDb = $connection;
+  $imageName = $_SESSION['imageName'];
+  $taskTitleReal = $_SESSION['taskTitle'];
+  $username = $_SESSION['username'];
+  $answer = explode(".", $imageName)[0];
 
-  $arrayImages = array(
-    "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog111.jpeg\" style=\"width:300px;\" id=\"shownPicture\">", 
-    "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog222.jpg\" style=\"width:300px;\" id=\"shownPicture\">",
-    "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog333.jpeg\" style=\"width:300px;\" id=\"shownPicture\">",
-    "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog444.jpg\" style=\"width:300px;\" id=\"shownPicture\">",
-    "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog555.png\" style=\"width:300px;\" id=\"shownPicture\">",
-    "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog666.jpg\" style=\"width:300px;\" id=\"shownPicture\">",
-    "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog777.jpg\" style=\"width:300px;\" id=\"shownPicture\">"
-  );
-
-  $numberQuestion = $_POST['numberQuestion'];
-
-  if (!isset($_SESSION['numberQuestion'])) {
-    $_SESSION['numberQuestion'] = $numberQuestion;
+  $sqlQuery2 = "SELECT ID, option1, option2, TASKTITLE FROM questions";
+	
+	if (mysqli_query($mainDb, $sqlQuery2)) {
+    $request = mysqli_query($mainDb, $sqlQuery2);
+    $count = mysqli_num_rows($request);
+    if ($count == 0) {
+      $sqlUpdate = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
+      VALUES ('$imageName', '$taskTitleReal', '$answer')";
+      mysqli_query($mainDb, $sqlUpdate);
+      header("Location: ../algo/index.php");
+      exit;
+    }
+		while($row = $request->fetch_assoc()) {
+      $workerID = $row['ID'];
+      $option1 = $row['option1'];
+      $option2 = $row['option2'];
+		}
+	} else {
+			echo "Error: " . $sqlQuery2 . "<br>" . mysqli_error($mainDb);
   }
+  
+  $_SESSION['option1'] = $option1;
+  $_SESSION['option2'] = $option2;
 
-  if (!isset($_SESSION['currentQuestion'])) {
-    $_SESSION['currentQuestion'] = 1;
-  } elseif ($_SESSION['currentQuestion'] == $_SESSION['numberQuestion']){
-    echo "<script> alert('You have finished the session')";
+  $sqlDelete = "DELETE FROM questions WHERE ID = '$workerID'";
+  mysqli_query($mainDb, $sqlDelete);
+
+  if ($_SESSION['currentQuestion'] == $_SESSION['numberQuestion']){
+    $pricePerQuestion = $_SESSION['pricePerQuestion'];
+    $additionMoney = $_SESSION['numberQuestion']*$_SESSION['pricePerQuestion'];
+    $numberQuestion = $_SESSION['numberQuestion'];
+    
+    // UPDATE WORKER DETAILS
+    $sqlQueryUpdateWorker = "UPDATE login_worker SET MONEY_ACCUMULATED = MONEY_ACCUMULATED + '$additionMoney', QUESTION_ANSWERED = QUESTION_ANSWERED + '$numberQuestion' WHERE USERNAME = '$username'";
+    mysqli_query($mainDb, $sqlQueryUpdateWorker);
+    $_SESSION['money'] += $additionMoney;
+    $_SESSION['question1'] += $numberQuestion;
+
+    //UPDATE WORKER HISTORY
+    $today = getdate();
+    $day = $today['mday'];
+    $month = $today['mon'];
+    $year = $today['year'];
+    $date = $day . "-" . $month . "-" . $year;
+    $workerHistoryUpdate = "INSERT INTO worker_history (DATE_SUBMISSION, NUMBER_OF_QUESTIONS, REWARD_EACH_QUESTION, USERNAME, TASKTITLE)
+    VALUES ('$date', '$numberQuestion', '$pricePerQuestion', '$username', '$taskTitleReal')";
+    mysqli_query($mainDb, $workerHistoryUpdate);
+
     unset($_SESSION['numberQuestion']);
     unset($_SESSION['currentQuestion']);
     header("Location: ../php/queryTaskWorker.php");
@@ -31,7 +63,5 @@
     $_SESSION['currentQuestion'] = $_SESSION['currentQuestion'] + 1;
   }
 
-  $number = $_SESSION['currentQuestion']%7;
-  $_SESSION['imagesShown'] = $arrayImages[$number];
   header("Location: ../html/workplace-mock.php");
 ?>
