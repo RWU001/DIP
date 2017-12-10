@@ -308,29 +308,48 @@ function downloadResult(taskTitle) {
 
 function createListClass() {
   classNumber = parseInt(document.getElementById('numberOfClasses').value);
-  featuresNumber = parseInt(document.getElementById('numberOfFeatures').value);
+  // featuresNumber = parseInt(document.getElementById('numberOfFeatures').value);
   
   //check classNumber and featuresNumber valid
-  if (!classNumber || !featuresNumber || classNumber <=0 || featuresNumber <= 0) {
+  // if (!classNumber || !featuresNumber || classNumber <=0 || featuresNumber <= 0) {
+	if (!classNumber || classNumber <=0 ) {
     alert("Please fill the number of class and feature correctly!");
   } else {
-    var detailClass = document.getElementById('detailClass');
+		var detailClass = document.getElementById('detailClass');
+		
     var class_feature = '<tr id="space"><td></td><td></td></tr>';
-    class_feature += '<tr><td class="table-header">Name of Class</td><td class="table-header">Features of Class</td></tr>';
+    class_feature += '<tr><td colspan="2" class="table-header">Name of Class</td></tr>';
     for (var numclass = 0; numclass < classNumber; numclass++) {
-      class_feature += '<tr id="space"><td colspan="2" style="background-color:;">Class ' + (numclass+1) + '</td><td></td></tr>';
-      class_feature += '<tr><td rowspan="' + featuresNumber + '"><input type="text" name="class' + numclass + '" placeholder="class' + numclass + '"></td>';
-      class_feature += '<td><input type="text" name="feature' + numclass + "0" + '" placeholder="feature' + numclass + "0" + '"></td></tr>';
-      for (var numfeature = 1; numfeature < featuresNumber; numfeature++) {
-        class_feature += '<tr><td><input type="text" name="feature' + numclass + numfeature + '" placeholder="feature'+ numclass + numfeature + '"></td></tr>';
-      }
-      class_feature += '<tr id="space"><td></td><td></td></tr>';
+      class_feature += '<tr id="space"><td>Class ' + (numclass+1) + '</td><td><input type="text" name="class' + numclass + '" placeholder="class' + numclass + '"></td></tr>';
+      // class_feature += '<tr><td rowspan="' + featuresNumber + '"><input type="text" name="class' + numclass + '" placeholder="class' + numclass + '"></td>';
+      // class_feature += '<td><input type="text" name="feature' + numclass + "0" + '" placeholder="feature' + numclass + "0" + '"></td></tr>';
+      // for (var numfeature = 1; numfeature < featuresNumber; numfeature++) {
+        // class_feature += '<tr><td><input type="text" name="feature' + numclass + numfeature + '" placeholder="feature'+ numclass + numfeature + '"></td></tr>';
+      // }
+      // class_feature += '<tr id="space"><td></td><td></td></tr>';
       class_feature += '<tr id="space"><td></td><td></td></tr>';
     }
     detailClass.innerHTML += class_feature;
-    document.getElementById('numberOfFeatures').value = featuresNumber;
+    // document.getElementById('numberOfFeatures').value = featuresNumber;
     document.getElementById('numberOfClasses').value = classNumber;
-    document.getElementById('createDetails').style.display = 'none';
+		document.getElementById('createDetails').style.display = 'none';
+		
+    // var class_feature = '<tr id="space"><td></td><td></td></tr>';
+    // class_feature += '<tr><td class="table-header">Name of Class</td><td class="table-header">Features of Class</td></tr>';
+    // for (var numclass = 0; numclass < classNumber; numclass++) {
+    //   class_feature += '<tr id="space"><td colspan="2" style="background-color:;">Class ' + (numclass+1) + '</td><td></td></tr>';
+    //   class_feature += '<tr><td rowspan="' + featuresNumber + '"><input type="text" name="class' + numclass + '" placeholder="class' + numclass + '"></td>';
+    //   class_feature += '<td><input type="text" name="feature' + numclass + "0" + '" placeholder="feature' + numclass + "0" + '"></td></tr>';
+    //   for (var numfeature = 1; numfeature < featuresNumber; numfeature++) {
+    //     class_feature += '<tr><td><input type="text" name="feature' + numclass + numfeature + '" placeholder="feature'+ numclass + numfeature + '"></td></tr>';
+    //   }
+    //   class_feature += '<tr id="space"><td></td><td></td></tr>';
+    //   class_feature += '<tr id="space"><td></td><td></td></tr>';
+    // }
+    // detailClass.innerHTML += class_feature;
+    // // document.getElementById('numberOfFeatures').value = featuresNumber;
+    // document.getElementById('numberOfClasses').value = classNumber;
+    // document.getElementById('createDetails').style.display = 'none';
     // console.log(classNumber + featuresNumber);
   } 
 }
@@ -411,43 +430,48 @@ function displayContents(txt) {
 
 function setDetails(txt) {
   var classNumber = 0;
-  var featuresNumber = 0;
+  // var featuresNumber = 0;
   var classes = [];
-  var features = [];
+  // var features = [];
   var strings = ""; //temp strings
 
   var stringarray = txt.split("\n");
   for (var i = 0; i < stringarray.length; i++) {
-    if (stringarray[i][0] == "-") {
-      classes.push(stringarray[i].substring(1));
-      classNumber++;
-      featuresNumber = 0;
-    } else {
-      if (features[classNumber - 1] == undefined) {
-        features.push([]);
-      }
-      features[classNumber - 1][featuresNumber] = stringarray[i];
-      featuresNumber++;
-    }
-  }
-  console.log(classNumber, featuresNumber);
 
+		classes.push(stringarray[i]);
+		classNumber++;
+
+    // if (stringarray[i][0] == "-") {
+    //   classes.push(stringarray[i].substring(1));
+    //   classNumber++;
+    //   featuresNumber = 0;
+    // } else {
+    //   if (features[classNumber - 1] == undefined) {
+    //     features.push([]);
+    //   }
+    //   features[classNumber - 1][featuresNumber] = stringarray[i];
+    //   featuresNumber++;
+    // }
+  }
+  // console.log(classNumber, featuresNumber);
+	console.log(classNumber);
+	
   var detailClass = document.getElementById('detailClass');
   var class_feature = '<tr id="space"><td></td><td></td></tr>';
-  class_feature += '<tr><td id="table-header">Name of Class</td><td id="table-header">Features of Class</td></tr>';
+	class_feature += '<tr><td colspan="2" class="table-header">Name of Class</td></tr>';
 
   for (var numclass = 0; numclass < classNumber; numclass++) {
-    class_feature += '<tr id="space"><td>Class ' + (numclass+1) + '</td><td></td></tr>';
-    class_feature += '<tr><td rowspan="' + featuresNumber + '"><input type="text" name="class' + numclass + '" placeholder="class' + numclass + '" value="' + classes[numclass] + '"></td>';
-    class_feature += '<td><input type="text" name="feature' + numclass + "0" + '" placeholder="feature' + numclass + "0" + '" value="' + features[numclass][0] + '"></td></tr>';
-    for (var numfeature = 1; numfeature < featuresNumber; numfeature++) {
-      class_feature += '<tr><td><input type="text" name="feature' + numclass + numfeature + '" placeholder="feature'+ numclass + numfeature + '" value="' + features[numclass][numfeature] + '"></td></tr>';
-    }
-    class_feature += '<tr id="space"><td></td><td></td></tr>';
+    class_feature += '<tr id="space"><td>Class ' + (numclass+1) + '</td><td><input type="text" name="class' + numclass + '" placeholder="class' + numclass + '" value="' + classes[numclass] + '"></td></tr>';
+    // class_feature += '<tr><td rowspan="' + featuresNumber + '"><input type="text" name="class' + numclass + '" placeholder="class' + numclass + '" value="' + classes[numclass] + '"></td>';
+    // class_feature += '<td><input type="text" name="feature' + numclass + "0" + '" placeholder="feature' + numclass + "0" + '" value="' + features[numclass][0] + '"></td></tr>';
+    // for (var numfeature = 1; numfeature < featuresNumber; numfeature++) {
+      // class_feature += '<tr><td><input type="text" name="feature' + numclass + numfeature + '" placeholder="feature'+ numclass + numfeature + '" value="' + features[numclass][numfeature] + '"></td></tr>';
+    // }
+    // class_feature += '<tr id="space"><td></td><td></td></tr>';
     class_feature += '<tr id="space"><td></td><td></td></tr>';
   }
   detailClass.innerHTML += class_feature;
-  document.getElementById('numberOfFeatures').value = featuresNumber;
+  // document.getElementById('numberOfFeatures').value = featuresNumber;
   document.getElementById('numberOfClasses').value = classNumber;
 }
 /////////////////////////////////////////////////////////////

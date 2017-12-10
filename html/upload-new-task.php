@@ -149,10 +149,10 @@
 								<td>How many classes do you want:</td>
 								<td><input type="number" name="classNumber" id="numberOfClasses"  required/></td>
 							</tr>
-							<tr>
+							<!-- <tr>
 								<td>How many features each classes have:</td>
 								<td><input type="number" name="featureNumber" id="numberOfFeatures"  required/></td>
-							</tr>
+							</tr> -->
 							<tr>
 								<td></td>
 								<td><button type="button" onclick="createListClass()" id="createDetails">Create Class Details</button></td>
