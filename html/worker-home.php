@@ -111,20 +111,19 @@
             </a>
             <br>
 
-					<div class="taskListBox" style="margin-bottom: 25px;">
-            <h2 class="taskListTitle" style="background-color:#66d37e; color:#d9534f">Task List</h2>
-            <div id="taskList">
-              <?php
-                  $request = $_SESSION['queryTaskWorker'];
-                  echo $request;
-              ?>
-            </div>
-          </div>
-          <form action="../php/workspace.php" method="post">
+					<form name="workplace" action="../php/workplace.php" method="post">
+						<div class="taskListBox" style="margin-bottom: 25px;">
+							<h2 class="taskListTitle" style="background-color:#66d37e; color:#d9534f">Task List</h2>
+							<div id="taskList">
+								<?php
+										$request = $_SESSION['queryTaskWorker'];
+										echo $request;
+								?>
+							</div>
+						</div>
             <label>
               <p><span class="numberQuestion">Number of Question: <input type="number" max="200" name="numberQuestion" id="numberQuestion"></span></p> 
             </label>
-            <input type="text" name="taskTitle" id="test" style="visibility: hidden" required/>
             <br>
             <input type="submit" value="Start Working!" id="startWorker">
           </form>

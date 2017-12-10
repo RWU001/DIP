@@ -23,8 +23,9 @@
       $taskTitle = $row['TASKTITLE'];
       $taskDesc = $row['TASK_DESCRIPTION'];
       $taskPrice = sprintf('%0.2f', $row['PRICE_PER_QUESTION']);
-      $all_query .= "<div class='QueryTaskWorker'><p><span onclick=fillTest('$taskTitle') class='workerQueryTitle'>$taskTitle</span><span class='pricePerQuestion'>Price per question: $$taskPrice</span></p><p class='workerQueryDescription'>$taskDesc</p></div>";
+      $all_query .= "<div class='QueryTaskWorker'><p><span onclick=\"document.getElementById('test').value = 'HAHA';\" class='workerQueryTitle'>$taskTitle</span><span class='pricePerQuestion'>Price per question: $$taskPrice</span></p><p class='workerQueryDescription'>$taskDesc</p></div>";
     }
+    $all_query .= '<input type="text" name="taskTitle" style="visibility: hidden;" id="test" required/>';
     $_SESSION['queryTaskWorker'] = $all_query;
     header("Location: ../html/worker-home.php");
   } else {

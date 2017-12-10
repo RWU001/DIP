@@ -466,5 +466,6 @@ changeColor();
 
 function fillTest(title) { //This function will determine the title that you choose.
 	document.getElementById('test').value = title;
+	// alert("HAHAHA");
 	// alert(title);
 }

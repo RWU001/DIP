@@ -97,7 +97,7 @@ $src5 = "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog444.jpg\" style=\"wi
 $src6 = "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog555.png\" style=\"width:300px;\" id=\"shownPicture\">";
 $src7 = "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog666.jpg\" style=\"width:300px;\" id=\"shownPicture\">";
 $src8 = "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog777.jpg\" style=\"width:300px;\" id=\"shownPicture\">";
-$src9 = "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog888?.png\" style=\"width:300px;\" id=\"shownPicture\">";
+$src9 = "<img src=\"../taskfiles/heiho/Dog Breeds/images/Dog888.jpg\" style=\"width:300px;\" id=\"shownPicture\">";
 $image0 = "INSERT INTO images_library (IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)
 VALUES ('testing', '$src0', 'DOnkey', 'heiho')";
 $image1 = "INSERT INTO images_library (IMAGE_NAME, IMAGE_PATH, TASKTITLE, USERNAME)

@@ -81,12 +81,12 @@
 			<div class="row animate-box">
 				<div class="col-md-12 fh5co-heading" style="font-size:16px;">
 					<h2 style="font-size:30px;" class="text-center">
-            Work Page<span style:"float:right">Number of task : 12/50</span>
+            Work Page<span style:"float:right">Number of task : <?php echo $_SESSION['currentQuestion']; ?>/<?php echo $_SESSION['numberQuestion']; ?></span>
           </h2>
 					<hr style="margin-bottom: 30px;">
-					<form enctype="multipart/form-data" method="post" action="../php/upload-new-task.php">
+					<form enctype="multipart/form-data" method="post" action="../php/workplace.php">
 						<div class="col-md-6">
-							<img src="https://i.pinimg.com/736x/63/0f/0e/630f0ef3f6f3126ca11f19f4a9b85243--dachshund-puppies-weenie-dogs.jpg" alt="cute dog" style="width:100%;">
+							<?php echo $_SESSION['imagesShown']; ?>
 						</div>
 						
 						<div class="col-md-6" style="padding:0;">
