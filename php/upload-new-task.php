@@ -112,24 +112,31 @@ if ($wallet < $taskBudget) {
     $_POST['feature12']
     $_POST['feature13']
     */
+
+    /*
+    Structure of the input in the notepad:(assume 2 class2)
+    $_POST['class0']
+    $_POST['class1']
+    */
   
     $classNumber = (int)$_POST['classNumber'];
-    $featureNumber = (int)$_POST['featureNumber'];
+    // $featureNumber = (int)$_POST['featureNumber'];
     
     for ($class = 0; $class < $classNumber; $class++) {
-      $classdata = '-'.$_POST['class' . $class] . "\n";
+      // $classdata = '-'.$_POST['class' . $class] . "\n";
+      $classdata = $_POST['class' . $class] . "\n";
       fwrite($handle, $classdata);
       echo $classdata;
   
-      for ($feature = 0; $feature < $featureNumber; $feature++) {
-        if ($feature == $featureNumber - 1 and $class == $classNumber - 1) {
-          $featuredata = $_POST['feature' . $class . $feature];
-        } else {
-          $featuredata = $_POST['feature' . $class . $feature] . "\n";
-        }
-        fwrite($handle, $featuredata);
-        echo $featuredata;
-      }
+      // for ($feature = 0; $feature < $featureNumber; $feature++) {
+      //   if ($feature == $featureNumber - 1 and $class == $classNumber - 1) {
+      //     $featuredata = $_POST['feature' . $class . $feature];
+      //   } else {
+      //     $featuredata = $_POST['feature' . $class . $feature] . "\n";
+      //   }
+      //   fwrite($handle, $featuredata);
+      //   echo $featuredata;
+      // }
     }
     fclose($handle); //close the notepad
   

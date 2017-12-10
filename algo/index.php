@@ -28,8 +28,8 @@
 
 	//After writing the corresponding arguments into matlab_input.txt, call SQS
 	//We can get the output of matlab from file "matlab_output.txt".
-	//$command = "SQS";
-	//system($command);
+	$command = "SQS";
+	system($command);
 
 	
 	//The following is how to read the output. (This is just a rough version, you could try to change it for your convenience.)

@@ -316,8 +316,19 @@ function createListClass() {
     alert("Please fill the number of class and feature correctly!");
   } else {
 		var detailClass = document.getElementById('detailClass');
-		
-    var class_feature = '<tr id="space"><td></td><td></td></tr>';
+		var class_feature = `<tr>
+		<td>How many classes do you want:</td>
+		<td><input type="number" name="classNumber" id="numberOfClasses"  required/></td>
+	</tr>
+	<!-- <tr>
+		<td>How many features each classes have:</td>
+		<td><input type="number" name="featureNumber" id="numberOfFeatures"  required/></td>
+	</tr> -->
+	<tr>
+		<td></td>
+		<td><button type="button" onclick="createListClass()" id="createDetails">Create Class Details</button></td>
+	</tr>`;
+    class_feature += '<tr id="space"><td></td><td></td></tr>';
     class_feature += '<tr><td colspan="2" class="table-header">Name of Class</td></tr>';
     for (var numclass = 0; numclass < classNumber; numclass++) {
       class_feature += '<tr id="space"><td>Class ' + (numclass+1) + '</td><td><input type="text" name="class' + numclass + '" placeholder="class' + numclass + '"></td></tr>';
@@ -328,8 +339,8 @@ function createListClass() {
       // }
       // class_feature += '<tr id="space"><td></td><td></td></tr>';
       class_feature += '<tr id="space"><td></td><td></td></tr>';
-    }
-    detailClass.innerHTML += class_feature;
+		}
+    detailClass.innerHTML = class_feature;
     // document.getElementById('numberOfFeatures').value = featuresNumber;
     document.getElementById('numberOfClasses').value = classNumber;
 		document.getElementById('createDetails').style.display = 'none';
@@ -456,8 +467,20 @@ function setDetails(txt) {
   // console.log(classNumber, featuresNumber);
 	console.log(classNumber);
 	
-  var detailClass = document.getElementById('detailClass');
-  var class_feature = '<tr id="space"><td></td><td></td></tr>';
+	var detailClass = document.getElementById('detailClass');
+	var class_feature = `<tr>
+	<td>How many classes do you want:</td>
+	<td><input type="number" name="classNumber" id="numberOfClasses"  required/></td>
+</tr>
+<!-- <tr>
+	<td>How many features each classes have:</td>
+	<td><input type="number" name="featureNumber" id="numberOfFeatures"  required/></td>
+</tr> -->
+<tr>
+	<td></td>
+	<td><button type="button" onclick="createListClass()" id="createDetails">Create Class Details</button></td>
+</tr>`;
+  class_feature += '<tr id="space"><td></td><td></td></tr>';
 	class_feature += '<tr><td colspan="2" class="table-header">Name of Class</td></tr>';
 
   for (var numclass = 0; numclass < classNumber; numclass++) {
@@ -470,7 +493,7 @@ function setDetails(txt) {
     // class_feature += '<tr id="space"><td></td><td></td></tr>';
     class_feature += '<tr id="space"><td></td><td></td></tr>';
   }
-  detailClass.innerHTML += class_feature;
+  detailClass.innerHTML = class_feature;
   // document.getElementById('numberOfFeatures').value = featuresNumber;
   document.getElementById('numberOfClasses').value = classNumber;
 }
