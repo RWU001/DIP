@@ -91,7 +91,6 @@
 						
 						<div class="col-md-6" style="padding:0;">
 							<div style="margin-left:100px;">
-								<p id="rejectButton">Reject Task : <button>Reject</button> </p>
 									<p><?php echo $_SESSION['currentQuestion']; ?>. Which category this image belong to?</p>
 									<input type="radio" name="question1" value="0" required><?php echo $_SESSION['option1'];?><br>
 									<input type="radio" name="question1" value="1"><?php echo $_SESSION['option2'];?>

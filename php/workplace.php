@@ -6,30 +6,53 @@
   $taskTitleReal = $_SESSION['taskTitle'];
   $username = $_SESSION['username'];
   $answer = explode(".", $imageName)[0];
+  echo $imageName;
 
-  $sqlQuery2 = "SELECT ID, option1, option2, TASKTITLE FROM questions";
+  $sqlQuery2 = "SELECT ID, option1, option2, TASKTITLE, IMAGE_PATH FROM questions LIMIT 1";
 	
 	if (mysqli_query($mainDb, $sqlQuery2)) {
     $request = mysqli_query($mainDb, $sqlQuery2);
     $count = mysqli_num_rows($request);
     if ($count == 0) {
-      $sqlUpdate = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
-      VALUES ('$imageName', '$taskTitleReal', '$answer')";
-      mysqli_query($mainDb, $sqlUpdate);
-      header("Location: ../algo/index.php");
-      exit;
+
+      $sqlQueryCheck = "SELECT * FROM finished_images WHERE TASKTITLE = '$taskTitleReal' AND IMAGE_NAME = '$imageName'";
+
+      if (mysqli_query($mainDb, $sqlQueryCheck)) {
+        $request = mysqli_query($mainDb, $sqlQueryCheck);
+        $count1 = mysqli_num_rows($request);
+
+        if ($count1 == 0) {
+          $sqlUpdate = "INSERT INTO finished_images (IMAGE_NAME, TASKTITLE, ANSWER)
+          VALUES ('$imageName', '$taskTitleReal', '$answer')";
+          mysqli_query($mainDb, $sqlUpdate);
+          header("Location: ../algo/index.php");
+          echo "HA";
+          exit;
+        }
+        // header("Location: ../algo/index.php");
+        echo $imageName;
+        exit;
+      }
     }
+
 		while($row = $request->fetch_assoc()) {
       $workerID = $row['ID'];
       $option1 = $row['option1'];
       $option2 = $row['option2'];
-		}
+      $imagePath = $row['IMAGE_PATH'];
+      $imageName = $row['IMAGE_NAME'];
+    }
+    
 	} else {
 			echo "Error: " . $sqlQuery2 . "<br>" . mysqli_error($mainDb);
   }
   
   $_SESSION['option1'] = $option1;
   $_SESSION['option2'] = $option2;
+  $_SESSION['imagePath'] = $imagePath;
+  if ($imageName != '') {
+    $_SESSION['imageName'] = $imageName;
+  }
 
   $sqlDelete = "DELETE FROM questions WHERE ID = '$workerID'";
   mysqli_query($mainDb, $sqlDelete);

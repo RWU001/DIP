@@ -199,8 +199,8 @@ if ($count == 0) {
 	}
 	
 	
-	$sql = "INSERT INTO questions (option1, option2, TASKTITLE, IMAGE_NAME)
-		VALUES ('$option1', '$option2', '$taskTitle', '$imageName')";
+	$sql = "INSERT INTO questions (option1, option2, TASKTITLE, IMAGE_NAME, IMAGE_PATH)
+		VALUES ('$option1', '$option2', '$taskTitle', '$imageName', '$imagePath')";
 	
 	$db->query($sql);
 	}

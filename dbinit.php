@@ -204,7 +204,7 @@ mysqli_query($mainDb, $workerHistory4);
 mysqli_query($mainDb, $workerHistory5);
 
 
-$questionsTable = "CREATE TABLE `questions` ( `ID` INT(10) NOT NULL AUTO_INCREMENT , `option1` VARCHAR(255) NOT NULL , `option2` VARCHAR(255) NOT NULL , `TASKTITLE` VARCHAR(255) NOT NULL,`IMAGE_NAME` VARCHAR(255) NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;";
+$questionsTable = "CREATE TABLE `questions` ( `ID` INT(10) NOT NULL AUTO_INCREMENT , `option1` VARCHAR(255) NOT NULL , `option2` VARCHAR(255) NOT NULL , `TASKTITLE` VARCHAR(255) NOT NULL,`IMAGE_NAME` VARCHAR(255) NOT NULL, `IMAGE_PATH` VARCHAR(255) NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;";
 
 mysqli_query($mainDb, $questionsTable);
 
