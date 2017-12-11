@@ -31,6 +31,7 @@ Something is wrong with the XAMPP installation :-(
 * Create a new database by pressing New, and set database name to DIP_CROWDSOURCING
 * Open a new browser tab, and open the dbinit.php by opening it from URL (example : localhost:8080/DIPWebsite/dbinit.php). This will create all the necessary tables and some fake data
 * And you can see the project by typing localhost:8080 at the URL
+* Change the file in php/upload-new-task.php for the $directory folder according to your own desired directory
 * We have created a fake account as a requester with username: heiho and password: heiho
 * We also have created a fake account as a worker with username:iamworker and password:iamworker
 
